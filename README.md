@@ -41,3 +41,8 @@ Original upstream SKILL.md files copied into project: naveedharri/benai-skills v
 
 - `.codex/agents/seo-specialist.toml` routes SEO work to a dedicated Marketing specialist.
 - Installed original upstream SKILL.md files: seo-audit, technical-seo-audit (Semrush MCP required), content-strategy, schema-markup and programmatic-seo. Dependencies and companion files have not been fully verified. No production deployment or scheduled SEO audit is active.
+
+## Copywriter
+
+- `.codex/agents/copywriter.toml` defines the dedicated Marketing copywriter.
+- Original upstream skills: `.agents/skills/copywriting/`, `copy-editing/`, `marketing-psychology/`, `cold-email/` from coreyhaines31/marketingskills. External companion assets/dependencies not fully validated. No automatic outbound sending or publishing.
