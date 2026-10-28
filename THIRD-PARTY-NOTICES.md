@@ -9,6 +9,7 @@ The following skill folders are copied from [coreyhaines31/marketingskills](http
 - content-strategy
 - copy-editing
 - copywriting
+- competitor-profiling
 - cro
 - customer-research
 - emails

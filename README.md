@@ -23,7 +23,7 @@ Os arquivos foram copiados de [coreyhaines31/marketingskills](https://github.com
 
 ## Skills de vendas e apresentação do usuário
 
-O agente comercial usa `sales-enablement` e `prospecting`, além de reaproveitar `customer-research`, `offers` e `cold-email` quando pertinentes. Esses pacotes não enviam mensagens nem substituem ferramentas de CRM; dados e integrações ausentes são declarados, nunca presumidos.
+O agente comercial usa `sales-enablement`, `prospecting` e, quando houver uma necessidade de inteligência competitiva, `competitor-profiling`; também reaproveita `customer-research`, `offers` e `cold-email` quando pertinentes. Os dados e integrações que não estiverem disponíveis são declarados, nunca presumidos. A skill de perfil competitivo usa Firecrawl/DataForSEO somente se esses conectores estiverem instalados; sem eles, o agente limita-se a pesquisa qualitativa em fontes públicas.
 
 O perfil compartilhado em `.agents/skills/marketing-general/references/user-profile.md` contém um rascunho de apresentação profissional do João Fecchio, derivado do contexto já registrado sobre a Arvello, desenvolvimento de software, demonstrações e propostas. O texto está marcado como não aprovado: o agente deve confirmar antes de enviá-lo ou publicá-lo e nunca misturá-lo com a apresentação de um cliente.
 
