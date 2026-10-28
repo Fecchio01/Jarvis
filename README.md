@@ -25,3 +25,11 @@ Os especialistas são acionados pelo Jarvis para tarefas solicitadas pelo usuár
 ## Usar os especialistas em outros projetos
 
 A configuração versionada aqui é de escopo deste repositório. Para usar os mesmos especialistas globalmente, copie os arquivos de `.codex/agents/` para `~/.codex/agents/` e as pastas de `.agents/skills/` para `~/.agents/skills/` (no Windows, use as pastas equivalentes dentro de `$env:USERPROFILE`). Incorpore o protocolo de `AGENTS.md` às instruções globais existentes, sem apagá-las, e reinicie as sessões do Codex.
+
+## Editor audiovisual
+
+- `.codex/agents/video-editor.toml` defines the video specialist under Design.
+- `.agents/skills/video-editing/`, `video-repurposing/`, `social-video-formatting/` contain three locally maintained skills. These are not copies of external SkillMD packages; third-party skill review is still pending.
+- `agents/design/video-editor/runner.mjs` is a Node.js + FFmpeg baseline for aspect-ratio formatting, not a complete AI editor.
+- `.github/workflows/video-editor.yml` runs on push, manual dispatch and scheduled checks. It requires media + JSON jobs committed to the repo; outputs are workflow artifacts. There are no media jobs yet.
+- Runway, Descript and Canva require separate connection, authorization and possibly paid credits. No Cloudflare video rendering service has been deployed.
