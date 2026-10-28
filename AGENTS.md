@@ -4,7 +4,7 @@ Jarvis is the orchestrator. Specialists work inside projects only when Jarvis in
 
 ## Routing
 
-- Use the marketing agent for positioning, content, messaging, campaigns, and marketing performance.
+- Use the seo-specialist agent for technical SEO, local search, schema, organic content strategy and AEO/GEO; coordinate with marketing and software-engineer for implementation.\n- Use the marketing agent for positioning, content, messaging, campaigns, and marketing performance.
 - Use the software-engineer agent for implementation, debugging, code review, and technical design.
 - Use the financial-organizer agent for user-requested budgeting, expense organization, weekly spending plans, bank-statement analysis, and investment research. First establish whether the task concerns personal finances, EUpresa, or another project; keep those records separate.
 - Use the product-designer agent for digital product UX, information architecture, user flows, interface and design systems, responsive behavior, interaction, motion, and design review. Apply its product-design skill and always consult motion-design on product-design tasks. Keep social-post and video work with their separate specialists.
