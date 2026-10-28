@@ -33,3 +33,6 @@ A configuração versionada aqui é de escopo deste repositório. Para usar os m
 - `agents/design/video-editor/runner.mjs` is a Node.js + FFmpeg baseline for aspect-ratio formatting, not a complete AI editor.
 - `.github/workflows/video-editor.yml` runs on push, manual dispatch and scheduled checks. It requires media + JSON jobs committed to the repo; outputs are workflow artifacts. There are no media jobs yet.
 - Runway, Descript and Canva require separate connection, authorization and possibly paid credits. No Cloudflare video rendering service has been deployed.
+
+### Upstream video skills
+Original upstream SKILL.md files copied into project: naveedharri/benai-skills video-repurposing, SkillMedev/motion-video-direction social-video-formatter, and remotion-dev/skills remotion-best-practices/create/render/captions. Selected video-repurposing references also copied. Not all referenced upstream support files are present; no third-party install scripts or dependencies were executed. The SkillMD remotion entry is only a stub; official Remotion skills were used instead. Original sources should be reviewed and pinned before executing scripts. External integrations are not connected.
