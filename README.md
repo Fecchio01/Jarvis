@@ -7,6 +7,7 @@ Configuração do Jarvis como orquestrador global de especialistas para Codex. O
 - `.codex/agents/marketing.toml`: estratégia, posicionamento, campanhas e desempenho.
 - `.codex/agents/copywriter.toml`: redação e revisão de copy para páginas, anúncios, e-mails, conteúdo social, ofertas e conversão.
 - `.codex/agents/sales-consultant.toml`: prospecção, qualificação, descoberta, demonstrações, propostas, objeções e próximos passos comerciais.
+- `.codex/agents/project-operations.toml`: planejamento e acompanhamento da entrega de projetos, riscos, dependências, mudanças e encerramento.
 - `.codex/agents/seo-specialist.toml`: SEO técnico, conteúdo orgânico, busca local e AEO/GEO. O Jarvis solicita diagnóstico de SEO quando identifica páginas públicas e indexáveis em qualquer projeto.
 - `.codex/agents/software-engineer.toml`: implementação, depuração, revisão de código e desenho técnico.
 - `.codex/agents/financial-organizer.toml`: orçamento, fluxo de caixa, planejamento e pesquisa financeira com dados autorizados.
