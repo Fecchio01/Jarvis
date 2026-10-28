@@ -1,46 +1,24 @@
 # Jarvis
 
-Configuração do agente Jarvis e de seus especialistas de marketing, engenharia de software e organização financeira para Codex.
+Configuração do orquestrador Jarvis e de seus especialistas de marketing, engenharia de software e planejamento financeiro para Codex.
 
-## Conteúdo
+## Especialistas e skills
 
-- `AGENTS.md`: protocolo de orquestração, revisão e encaminhamento do Jarvis.
-- `agents/marketing.toml`: definição do subagente de marketing.
-- `skills/marketing-general/SKILL.md`: skill de marketing.
-- `skills/marketing-general/references/user-profile.md`: contexto de marketing carregado pela skill quando relevante.
-- `agents/software-engineer.toml`: definição do subagente de engenharia de software.
-- `skills/software-engineering/SKILL.md`: skill de engenharia de software.
-- `agents/financial-organizer.toml`: definição do subagente de organização financeira.
-- `skills/financial-organization/SKILL.md`: skill de organização de finanças de projetos e negócios.
+- `.codex/agents/marketing.toml` usa a skill `marketing-general`.
+- `.codex/agents/software-engineer.toml` usa a skill `software-engineering`.
+- `.codex/agents/financial-organizer.toml` usa a skill `financial-organization`.
 
-Os especialistas são acionados pelo Jarvis para tarefas solicitadas pelo usuário. Eles não executam rotinas autônomas nem monitoram projetos em segundo plano.
+As skills vivem em `.agents/skills/`; a configuração dos agentes fica em `.codex/agents/`. Essas são as pastas de descoberta de projeto do Codex. Os arquivos de orientação do Jarvis ficam em `AGENTS.md`.
 
-## Instalação no Windows
+## Carregar no Codex neste projeto
 
-Feche as sessões do Codex antes de instalar. No PowerShell, a partir da raiz deste repositório:
+Puxe as alterações com `git pull` e abra uma nova sessão do Codex a partir da raiz deste repositório. Os agentes e as skills ficam disponíveis neste projeto; não é necessário copiá-los para a configuração global. Se a sessão atual já estava aberta, reinicie-a para recarregar as definições.
 
-```powershell
-$codex = Join-Path $env:USERPROFILE ".codex"
-New-Item -ItemType Directory -Force (Join-Path $codex "agents") | Out-Null
-New-Item -ItemType Directory -Force (Join-Path $codex "skills") | Out-Null
-Copy-Item .\agents\marketing.toml (Join-Path $codex "agents\marketing.toml") -Force
-Copy-Item .\skills\marketing-general (Join-Path $codex "skills\marketing-general") -Recurse -Force
-Copy-Item .\agents\software-engineer.toml (Join-Path $codex "agents\software-engineer.toml") -Force
-Copy-Item .\skills\software-engineering (Join-Path $codex "skills\software-engineering") -Recurse -Force
-Copy-Item .\agents\financial-organizer.toml (Join-Path $codex "agents\financial-organizer.toml") -Force
-Copy-Item .\skills\financial-organization (Join-Path $codex "skills\financial-organization") -Recurse -Force
-```
+- [Documentação oficial de agentes personalizados](https://learn.chatgpt.com/docs/agent-configuration/subagents)
+- [Documentação oficial de skills](https://learn.chatgpt.com/docs/build-skills)
 
-O Codex carrega instruções globais de `AGENTS.md`. Revise o arquivo existente em `$codex\AGENTS.md` e incorpore nele o protocolo deste repositório, preservando as instruções globais que já existirem. Se não houver um arquivo global, copie o `AGENTS.md` da raiz para esse caminho:
+Os especialistas são acionados pelo Jarvis para tarefas solicitadas pelo usuário. A revisão financeira semanal é feita quando solicitada; não há monitoramento de conta nem execução em segundo plano.
 
-```powershell
-if (-not (Test-Path (Join-Path $codex "AGENTS.md"))) {
-    Copy-Item .\AGENTS.md (Join-Path $codex "AGENTS.md")
-}
-```
+## Usar os especialistas em outros projetos
 
-Reinicie o Codex após a instalação para recarregar a configuração. As skills podem ser chamadas pelos nomes `marketing-general`, `software-engineering` e `financial-organization`; os arquivos TOML definem os agentes especializados como `marketing`, `software-engineer` e `financial-organizer`.
-
-## Instalação em macOS/Linux
-
-A estrutura equivalente fica em `~/.codex/agents/marketing.toml`, `~/.codex/agents/software-engineer.toml`, `~/.codex/agents/financial-organizer.toml`, `~/.codex/skills/marketing-general/`, `~/.codex/skills/software-engineering/`, `~/.codex/skills/financial-organization/` e `~/.codex/AGENTS.md`. Crie os diretórios, copie os arquivos e incorpore o protocolo de `AGENTS.md` às instruções globais existentes sem apagá-las. Reinicie o Codex depois.
+A configuração versionada aqui é de escopo deste repositório. Para usar os mesmos especialistas globalmente, copie os arquivos de `.codex/agents/` para `~/.codex/agents/` e as pastas de `.agents/skills/` para `~/.agents/skills/` (no Windows, use as pastas equivalentes dentro de `$env:USERPROFILE`). Incorpore o protocolo de `AGENTS.md` às instruções globais existentes, sem apagá-las, e reinicie as sessões do Codex.
