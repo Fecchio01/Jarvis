@@ -1,48 +1,47 @@
 # Jarvis
 
-Configuração do orquestrador Jarvis e de seus especialistas de marketing, engenharia de software, planejamento financeiro e design de produto digital para Codex.
+Configuração do Jarvis como orquestrador global de especialistas para Codex. O Jarvis avalia cada tarefa, aciona automaticamente os agentes relevantes, coordena o trabalho autônomo deles e entrega o resultado. Os especialistas trabalham dentro do escopo autorizado e reportam ao Jarvis.
 
-## Especialistas e skills
+## Agentes
 
-- `.codex/agents/marketing.toml` usa a skill `marketing-general`.
-- `.codex/agents/software-engineer.toml` usa a skill `software-engineering`.
-- `.codex/agents/financial-organizer.toml` usa a skill `financial-organization`.
-- `.codex/agents/product-designer.toml` usa as skills `product-design`, `frontend-design`, `ui-ux-pro-max`, `web-design-guidelines` e `motion-design`.
+- `.codex/agents/marketing.toml`: estratégia, posicionamento, campanhas e desempenho.
+- `.codex/agents/copywriter.toml`: redação e revisão de copy para páginas, anúncios, e-mails, conteúdo social, ofertas e conversão.
+- `.codex/agents/seo-specialist.toml`: SEO técnico, conteúdo orgânico, busca local e AEO/GEO. O Jarvis solicita diagnóstico de SEO quando identifica páginas públicas e indexáveis em qualquer projeto.
+- `.codex/agents/software-engineer.toml`: implementação, depuração, revisão de código e desenho técnico.
+- `.codex/agents/financial-organizer.toml`: orçamento, fluxo de caixa, planejamento e pesquisa financeira com dados autorizados.
+- `.codex/agents/product-designer.toml`: UX de produtos digitais e sistemas de interface.
+- `.codex/agents/video-editor.toml`: edição e adaptação de conteúdo audiovisual.
 
-As skills vivem em `.agents/skills/`; a configuração dos agentes fica em `.codex/agents/`. Essas são as pastas de descoberta de projeto do Codex. Os arquivos de orientação do Jarvis ficam em `AGENTS.md`.
+O Jarvis decide quais especialistas são relevantes para cada solicitação. Os agentes executam autonomamente as partes delegadas e devolvem achados e entregáveis ao Jarvis. Não há execução contínua em segundo plano para os agentes de projeto.
 
-O agente de design atua em produtos digitais. Posts para redes sociais e edição de vídeos continuam em especialidades separadas. Suas preferências de interface e identidade são aplicadas somente ao projeto correspondente. O conjunto de tecnologias de referência inclui HTML, CSS, JavaScript, TypeScript, GLSL e Three.js; a escolha é feita por tarefa e respeita as restrições específicas de cada projeto.
+## Skills de copy
 
-## Carregar no Codex neste projeto
+O agente copywriter escolhe e aplica as skills pertinentes ao formato e à etapa da tarefa. O conjunto inclui copywriting, copy-editing, marketing-psychology, cold-email, content-strategy, emails, social, ad-creative, cro, customer-research, offers e product-marketing. As skills originais e seus arquivos de referência estão em `.agents/skills/`; nem toda skill é carregada em toda tarefa.
 
-Puxe as alterações com `git pull` e abra uma nova sessão do Codex a partir da raiz deste repositório. Os agentes e as skills ficam disponíveis neste projeto; não é necessário copiá-los para a configuração global. Se a sessão atual já estava aberta, reinicie-a para recarregar as definições.
+Os arquivos foram copiados de [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) no commit `0cd9b3a0ef4c411a1d690419ce843f2a1da32cce`. Consulte `THIRD-PARTY-NOTICES.md` para licença e atribuição.
 
-- [Documentação oficial de agentes personalizados](https://learn.chatgpt.com/docs/agent-configuration/subagents)
-- [Documentação oficial de skills](https://learn.chatgpt.com/docs/build-skills)
+## Instalação neste repositório
 
-Os especialistas são acionados pelo Jarvis para tarefas solicitadas pelo usuário. A revisão financeira semanal é feita quando solicitada; não há monitoramento de conta nem execução em segundo plano.
+Puxe as alterações e abra uma nova sessão do Codex na raiz do repositório. Assim, os agentes e as skills ficam disponíveis neste projeto.
 
-## Usar os especialistas em outros projetos
+## Instalação global para todos os projetos
 
-A configuração versionada aqui é de escopo deste repositório. Para usar os mesmos especialistas globalmente, copie os arquivos de `.codex/agents/` para `~/.codex/agents/` e as pastas de `.agents/skills/` para `~/.agents/skills/` (no Windows, use as pastas equivalentes dentro de `$env:USERPROFILE`). Incorpore o protocolo de `AGENTS.md` às instruções globais existentes, sem apagá-las, e reinicie as sessões do Codex.
+Arquivos versionados no repositório não passam a valer automaticamente em outros repositórios. Para habilitar o mesmo Jarvis em qualquer projeto do usuário, execute na raiz deste repositório:
 
-## Editor audiovisual
+```bash
+bash scripts/install-global.sh
+```
 
-- `.codex/agents/video-editor.toml` defines the video specialist under Design.
-- `.agents/skills/video-editing/`, `video-repurposing/`, `social-video-formatting/` contain three locally maintained skills. These are not copies of external SkillMD packages; third-party skill review is still pending.
-- `agents/design/video-editor/runner.mjs` is a Node.js + FFmpeg baseline for aspect-ratio formatting, not a complete AI editor.
-- `.github/workflows/video-editor.yml` runs on push, manual dispatch and scheduled checks. It requires media + JSON jobs committed to the repo; outputs are workflow artifacts. There are no media jobs yet.
-- Runway, Descript and Canva require separate connection, authorization and possibly paid credits. No Cloudflare video rendering service has been deployed.
+No PowerShell do Windows, execute `./scripts/install-global.ps1`. O instalador adiciona o protocolo Jarvis a `~/.codex/AGENTS.md`, instala os agentes em `~/.codex/agents/` e as skills em `~/.agents/skills/`. Ele mantém as instruções globais existentes fora do bloco gerenciado pelo Jarvis. Reinicie a sessão do Codex após instalar.
 
-### Upstream video skills
-Original upstream SKILL.md files copied into project: naveedharri/benai-skills video-repurposing, SkillMedev/motion-video-direction social-video-formatter, and remotion-dev/skills remotion-best-practices/create/render/captions. Selected video-repurposing references also copied. Not all referenced upstream support files are present; no third-party install scripts or dependencies were executed. The SkillMD remotion entry is only a stub; official Remotion skills were used instead. Original sources should be reviewed and pinned before executing scripts. External integrations are not connected.
+## Revisão financeira semanal
 
-## SEO specialist
+A revisão financeira é obrigatória e ocorre em uma automação semanal separada, com conversa própria no ChatGPT. Ela usa apenas extratos ou dados atuais fornecidos pelo usuário ou por uma conexão explicitamente autorizada e somente de leitura. Se os dados não estiverem disponíveis, solicita o material necessário; não afirma monitorar contas sem uma conexão ativa. O organizador financeiro mantém separadas as finanças pessoais, da EUpresa e de outros projetos.
 
-- `.codex/agents/seo-specialist.toml` routes SEO work to a dedicated Marketing specialist.
-- Installed original upstream SKILL.md files: seo-audit, technical-seo-audit (Semrush MCP required), content-strategy, schema-markup and programmatic-seo. Dependencies and companion files have not been fully verified. No production deployment or scheduled SEO audit is active.
+O protocolo no repositório define o comportamento do agente. A automação recorrente é uma configuração separada do ChatGPT e precisa estar habilitada para executar a revisão semanal.
 
-## Copywriter
+## SEO, produto e vídeo
 
-- `.codex/agents/copywriter.toml` defines the dedicated Marketing copywriter.
-- Original upstream skills: `.agents/skills/copywriting/`, `copy-editing/`, `marketing-psychology/`, `cold-email/` from coreyhaines31/marketingskills. External companion assets/dependencies not fully validated. No automatic outbound sending or publishing.
+- O diagnóstico de SEO é acionado pelo Jarvis quando o projeto contém páginas públicas indexáveis. Painéis internos, CRMs privados e protótipos não são tratados como páginas de busca.
+- O agente de produto usa `product-design`, `frontend-design`, `ui-ux-pro-max`, `web-design-guidelines` e `motion-design` quando pertinentes.
+- O editor de vídeo usa `video-editing`, `video-repurposing` e `social-video-formatting`. O runner FFmpeg existente formata mídia já preparada; serviços externos exigem conexão própria.
