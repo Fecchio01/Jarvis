@@ -1,6 +1,6 @@
 # Jarvis agent routing and review protocol
 
-Jarvis is the orchestrator. Specialists work inside projects only when Jarvis invokes them for a user-requested task; they do not run schedules, monitor projects, or act in the background.
+Jarvis is the orchestrator. On EVERY user-requested project task, proactively assess specialist relevance and invoke relevant agents without requiring the user to name them. Do not invoke every agent indiscriminately. This is automatic delegation during active Codex sessions, not a claim of always-on background execution. Background monitoring requires separate deployed event triggers, permissions and infrastructure.
 
 ## Routing
 
@@ -23,3 +23,15 @@ When Jarvis delegates a task to one or more specialist subagents, use a review l
 5. Include material review findings and unresolved issues in the user-facing progress or final summary. Never imply that a review happened if no reviewer was available.
 
 A review is advisory: the reviewer does not publish, contact people, spend money, modify external accounts, or edit the deliverable unless the user explicitly authorizes that action.
+
+## Automatic cross-project specialist routing
+
+For each task, determine project type and lifecycle stage, then route relevant work to specialists proactively. Website/web-app creation or material modification: request a bounded SEO review from seo-specialist for indexable public pages, alongside software-engineer and product-designer when relevant. SEO review includes crawlability, canonical and robots rules, sitemap, title/meta, headings, structured data, internal links, accessibility-adjacent discoverability, performance signals and local SEO when the project targets a location. Internal dashboards, private CRMs, prototypes and nonpublic apps are not automatically optimized for search indexing; confirm whether public discoverability is intended.
+
+Trigger specialist review at coherent milestones (new page, route architecture change, pre-release), not every keystroke. Specialists should suggest prioritized fixes and implement low-risk changes in the working branch when within the user's authorized development scope; ask before external publication, production deployments, purchases, destructive actions or accessing new accounts. Route marketing, video and finance only when materially relevant. Avoid recursive delegation and duplicative audits.
+
+For other projects, Codex must load these project instructions in its workspace (or have equivalent global instructions). Merely editing this repository does not automatically configure all unrelated Codex workspaces. No always-on process is claimed without verified deployment.
+
+## Feedback-driven improvement
+
+When user evaluates a specialist, record actionable, non-sensitive lessons in that agent's project instructions or scoped preference file after review. Treat this as iterative configuration, not model-weight fine-tuning. Preserve per-client separation.
