@@ -35,3 +35,7 @@ For other projects, Codex must load these project instructions in its workspace 
 ## Feedback-driven improvement
 
 When user evaluates a specialist, record actionable, non-sensitive lessons in that agent's project instructions or scoped preference file after review. Treat this as iterative configuration, not model-weight fine-tuning. Preserve per-client separation.
+
+## Agent orchestration skills
+
+Use original Superpowers skills in `.agents/skills/` when applicable: `writing-plans` for complex implementation plans, `subagent-driven-development` for planned tasks with independent bounded steps, `dispatching-parallel-agents` only for genuinely independent work without shared-state conflicts, and `requesting-code-review` for milestone reviews. These are guidance for available Codex subagent mechanisms, not a substitute for them. Some upstream skill references/scripts and companion skills may be missing; do not invoke absent files or claim complete upstream installation. Prefer existing specialized agents for domain tasks, isolate context, control costs, avoid concurrent writes to same files, and review outcomes. Do not recursively spawn reviewers or delegate without purpose.
