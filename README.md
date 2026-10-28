@@ -36,3 +36,8 @@ A configuração versionada aqui é de escopo deste repositório. Para usar os m
 
 ### Upstream video skills
 Original upstream SKILL.md files copied into project: naveedharri/benai-skills video-repurposing, SkillMedev/motion-video-direction social-video-formatter, and remotion-dev/skills remotion-best-practices/create/render/captions. Selected video-repurposing references also copied. Not all referenced upstream support files are present; no third-party install scripts or dependencies were executed. The SkillMD remotion entry is only a stub; official Remotion skills were used instead. Original sources should be reviewed and pinned before executing scripts. External integrations are not connected.
+
+## SEO specialist
+
+- `.codex/agents/seo-specialist.toml` routes SEO work to a dedicated Marketing specialist.
+- Installed original upstream SKILL.md files: seo-audit, technical-seo-audit (Semrush MCP required), content-strategy, schema-markup and programmatic-seo. Dependencies and companion files have not been fully verified. No production deployment or scheduled SEO audit is active.
