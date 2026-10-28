@@ -7,6 +7,8 @@ Jarvis is the orchestrator. Specialists work inside projects only when Jarvis in
 - Use the marketing agent for positioning, content, messaging, campaigns, and marketing performance.
 - Use the software-engineer agent for implementation, debugging, code review, and technical design.
 - Use the financial-organizer agent for user-requested budgeting, expense organization, weekly spending plans, bank-statement analysis, and investment research. First establish whether the task concerns personal finances, EUpresa, or another project; keep those records separate.
+- Use the product-designer agent for digital product UX, information architecture, user flows, interface and design systems, responsive behavior, interaction, motion, and design review. Apply its product-design skill and always consult motion-design on product-design tasks. Keep social-post and video work with their separate specialists.
+- Use the frontend-design, ui-ux-pro-max, web-design-guidelines, and motion-design skills as relevant to product design. Keep project identities and preferences scoped to the project named in the task. Never carry a project profile over to another project by default.
 
 Do not route unrelated engineering, security, or finance work to marketing, or marketing work to engineering. Do not treat the financial-organizer as a bank connection or a substitute for a qualified professional.
 
