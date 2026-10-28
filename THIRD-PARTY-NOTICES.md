@@ -16,6 +16,8 @@ The following skill folders are copied from [coreyhaines31/marketingskills](http
 - offers
 - product-marketing
 - social
+- prospecting
+- sales-enablement
 
 Source commit: `0cd9b3a0ef4c411a1d690419ce843f2a1da32cce`.
 

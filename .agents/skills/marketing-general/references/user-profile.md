@@ -25,6 +25,12 @@ Use this profile only when it is relevant to the task. It is a working brief, no
 - The user prefers to learn how to think through a sales conversation instead of receiving a fixed script, unless a script is specifically requested.
 - A prior weekly report mentioned about 50 approaches, follow-ups, and one demo. This is historical performance data and must not be presented as current.
 
+## Sales presentation (working draft; not approved for external use)
+
+- Draft introduction: “Sou o João Fecchio, estudante e desenvolvedor de software. Estou construindo a Arvello, um pequeno negócio de soluções web e software. Minha atuação se concentra no desenvolvimento, em demonstrações de produto e em propostas comerciais. Também compartilho aprendizados sobre construção de software e IA de forma prática.”
+- This draft is based on the working context above, not a confirmed public bio. Verify the business status and exact wording with the user before sending it to clients, publishing it, or presenting it as approved.
+- Use this introduction only for the user's own work or personal brand. Keep client and other project introductions separate.
+
 ## Personalization limits
 
 - Do not assume the user's age, current schedule, relationship status, fitness status, or current campaign status from older context.

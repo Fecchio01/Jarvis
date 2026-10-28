@@ -6,6 +6,7 @@ Configuração do Jarvis como orquestrador global de especialistas para Codex. O
 
 - `.codex/agents/marketing.toml`: estratégia, posicionamento, campanhas e desempenho.
 - `.codex/agents/copywriter.toml`: redação e revisão de copy para páginas, anúncios, e-mails, conteúdo social, ofertas e conversão.
+- `.codex/agents/sales-consultant.toml`: prospecção, qualificação, descoberta, demonstrações, propostas, objeções e próximos passos comerciais.
 - `.codex/agents/seo-specialist.toml`: SEO técnico, conteúdo orgânico, busca local e AEO/GEO. O Jarvis solicita diagnóstico de SEO quando identifica páginas públicas e indexáveis em qualquer projeto.
 - `.codex/agents/software-engineer.toml`: implementação, depuração, revisão de código e desenho técnico.
 - `.codex/agents/financial-organizer.toml`: orçamento, fluxo de caixa, planejamento e pesquisa financeira com dados autorizados.
@@ -19,6 +20,12 @@ O Jarvis decide quais especialistas são relevantes para cada solicitação. Os 
 O agente copywriter escolhe e aplica as skills pertinentes ao formato e à etapa da tarefa. O conjunto inclui copywriting, copy-editing, marketing-psychology, cold-email, content-strategy, emails, social, ad-creative, cro, customer-research, offers e product-marketing. As skills originais e seus arquivos de referência estão em `.agents/skills/`; nem toda skill é carregada em toda tarefa.
 
 Os arquivos foram copiados de [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) no commit `0cd9b3a0ef4c411a1d690419ce843f2a1da32cce`. Consulte `THIRD-PARTY-NOTICES.md` para licença e atribuição.
+
+## Skills de vendas e apresentação do usuário
+
+O agente comercial usa `sales-enablement` e `prospecting`, além de reaproveitar `customer-research`, `offers` e `cold-email` quando pertinentes. Esses pacotes não enviam mensagens nem substituem ferramentas de CRM; dados e integrações ausentes são declarados, nunca presumidos.
+
+O perfil compartilhado em `.agents/skills/marketing-general/references/user-profile.md` contém um rascunho de apresentação profissional do João Fecchio, derivado do contexto já registrado sobre a Arvello, desenvolvimento de software, demonstrações e propostas. O texto está marcado como não aprovado: o agente deve confirmar antes de enviá-lo ou publicá-lo e nunca misturá-lo com a apresentação de um cliente.
 
 ## Instalação neste repositório
 
