@@ -1,0 +1,34 @@
+name: Jarvis Video Editor
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+  push:
+    paths:
+      - 'agents/design/video-editor/jobs/**'
+      - 'agents/design/video-editor/media/**'
+      - 'agents/design/video-editor/runner.mjs'
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Render queued jobs
+        shell: bash
+        run: |
+          shopt -s nullglob
+          for job in agents/design/video-editor/jobs/*.json; do
+            node agents/design/video-editor/runner.mjs "$job"
+          done
+      - name: Upload output artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-editor-renders
+          path: agents/design/video-editor/outputs/
+          if-no-files-found: ignore
+          retention-days: 7
