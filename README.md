@@ -1,14 +1,17 @@
 # Jarvis
 
-Configuração do orquestrador Jarvis e de seus especialistas de marketing, engenharia de software e planejamento financeiro para Codex.
+Configuração do orquestrador Jarvis e de seus especialistas de marketing, engenharia de software, planejamento financeiro e design de produto digital para Codex.
 
 ## Especialistas e skills
 
 - `.codex/agents/marketing.toml` usa a skill `marketing-general`.
 - `.codex/agents/software-engineer.toml` usa a skill `software-engineering`.
 - `.codex/agents/financial-organizer.toml` usa a skill `financial-organization`.
+- `.codex/agents/product-designer.toml` usa as skills `product-design`, `frontend-design`, `ui-ux-pro-max`, `web-design-guidelines` e `motion-design`.
 
 As skills vivem em `.agents/skills/`; a configuração dos agentes fica em `.codex/agents/`. Essas são as pastas de descoberta de projeto do Codex. Os arquivos de orientação do Jarvis ficam em `AGENTS.md`.
+
+O agente de design atua em produtos digitais. Posts para redes sociais e edição de vídeos continuam em especialidades separadas. Suas preferências de interface e identidade são aplicadas somente ao projeto correspondente. O conjunto de tecnologias de referência inclui HTML, CSS, JavaScript, TypeScript, GLSL e Three.js; a escolha é feita por tarefa e respeita as restrições específicas de cada projeto.
 
 ## Carregar no Codex neste projeto
 
