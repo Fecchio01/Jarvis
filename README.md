@@ -11,6 +11,12 @@ Configuração do Jarvis como orquestrador global de especialistas para Codex. O
 - `.codex/agents/customer-success.toml`: onboarding, adoção, suporte e sucesso do cliente após a venda.
 - `.codex/agents/seo-specialist.toml`: SEO técnico, conteúdo orgânico, busca local e AEO/GEO. O Jarvis solicita diagnóstico de SEO quando identifica páginas públicas e indexáveis em qualquer projeto.
 - `.codex/agents/software-engineer.toml`: implementação, depuração, revisão de código e desenho técnico.
+- `.codex/agents/frontend-engineer.toml`: implementação web em HTML, CSS, JavaScript e TypeScript.
+- `.codex/agents/backend-engineer.toml`: APIs, lógica de servidor, autenticação e integrações.
+- `.codex/agents/database-engineer.toml`: SQL, PostgreSQL/Supabase, modelos, migrações e políticas de acesso.
+- `.codex/agents/qa-engineer.toml`: análise de defeitos, critérios de aceitação e QA autorizado.
+- `.codex/agents/platform-engineer.toml`: CI/CD, hospedagem, infraestrutura, observabilidade e recuperação.
+- `.codex/agents/application-security-engineer.toml`: segurança de aplicações, autenticação, dados e isolamento.
 - `.codex/agents/financial-organizer.toml`: orçamento, fluxo de caixa, planejamento e pesquisa financeira com dados autorizados.
 - `.codex/agents/product-designer.toml`: UX de produtos digitais e sistemas de interface.
 - `.codex/agents/video-editor.toml`: edição e adaptação de conteúdo audiovisual.
@@ -34,6 +40,12 @@ O perfil compartilhado em `.agents/skills/marketing-general/references/user-prof
 Customer Success acompanha o resultado do cliente após a venda: onboarding, adoção, suporte, feedback e continuidade quando houver acordo de manutenção. Trabalha junto com Marketing ao fornecer aprendizados e oportunidades de advocacy autorizadas, mas não assume campanhas nem publica depoimentos. Project Operations coordena a entrega até a aceitação.
 
 A skill local `.agents/skills/customer-success/SKILL.md` adapta princípios da skill `customer-success-manager` de [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills), com atribuição MIT. Foi ajustada para serviços digitais sob medida; não presume métricas SaaS, telemetria ou SLA.
+
+## Equipe de Engenharia
+
+O software-engineer é o generalista para tarefas pequenas e mudanças que cruzam camadas. Jarvis aciona especialistas conforme a tarefa: frontend, backend, banco de dados, QA, plataforma ou segurança.
+
+A cobertura inclui HTML5, CSS3, JavaScript, TypeScript, Node.js, Python, SQL (conforme o banco do projeto), JSON/YAML, shell, GLSL e Three.js quando houver necessidade real de 3D. Three.js é uma biblioteca. Essa lista não obriga um projeto a usar todas as tecnologias: o agente inspeciona o repositório e segue a stack já adotada. Consulte as skills especializadas em `.agents/skills/`.
 
 ## Instalação neste repositório
 

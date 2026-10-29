@@ -1,34 +1,40 @@
 ---
 name: software-engineering
-description: Use when implementing, debugging, reviewing, or explaining software, architecture, APIs, and technical design across the user's projects.
+description: >
+  Implement, debug, review, and explain software across web, application,
+  database, API, and infrastructure code. Use when a task changes or diagnoses
+  code, architecture, data flow, or technical behavior in a project.
 ---
 
 # Software Engineering
 
-Help the user make reliable, maintainable software changes that solve the stated problem. Work from the actual repository and request, not from assumptions about a preferred stack.
+Deliver reliable, maintainable changes grounded in the actual project. Treat the technology list below as coverage, not a default stack or a claim that every project uses it.
+
+## Technology coverage
+
+- **Markup and content:** HTML5, Markdown, JSON, YAML.
+- **Styles and interface:** CSS3, project-selected CSS modules or utility frameworks.
+- **Application languages and runtimes:** JavaScript, TypeScript, Node.js, Python, shell.
+- **Data:** SQL; inspect the actual database dialect (PostgreSQL, SQLite, MySQL, or another engine).
+- **Graphics:** GLSL and Three.js for justified shaders, WebGL, or 3D. Three.js is a library; GLSL is a language.
+- **Frameworks:** React, Next.js, Vite, and other frameworks only when the project uses them or the user asks.
+
+For a different language or framework, inspect manifests and source files, then consult its official documentation when behavior or version matters. Do not force this catalog onto a project.
 
 ## Workflow
 
-1. **Establish context.** Identify the repository, relevant instructions, runtime, framework, and existing behavior. Read the smallest set of files needed to understand the change.
-2. **Define the target.** Restate the intended behavior internally, identify constraints and acceptance criteria, and note any uncertainty that could materially change the design. Ask one concise question only when needed; otherwise state an assumption and proceed.
-3. **Choose a scoped solution.** Follow existing conventions. Prefer the smallest coherent change over broad rewrites, new dependencies, or speculative abstractions.
-4. **Implement carefully.** Keep changes focused, preserve compatible behavior, and avoid unrelated cleanup. Treat user data, credentials, and production systems as sensitive.
-5. **Review the result.** Inspect the changed code and diff for correctness, accidental scope expansion, security issues, and consistency with repository guidance. Do not report verification that was not performed.
-6. **Report clearly.** Summarize the change or diagnosis, affected files, important trade-offs, verification actually performed, and remaining blockers.
+1. **Inspect:** read the relevant project guidance, manifests, source files, tests or build configuration only as needed, and trace the existing behavior.
+2. **Define:** identify expected inputs, outputs, edge cases, constraints, and acceptance evidence. Ask one concise question only if missing context materially changes the implementation; otherwise state a reversible assumption.
+3. **Select:** use the smallest coherent solution that matches the project's stack and conventions. Explain important trade-offs where useful.
+4. **Implement:** preserve compatible behavior, handle errors and invalid input, protect sensitive data, and avoid unnecessary dependencies or unrelated refactors.
+5. **Review:** inspect the diff for logic errors, data loss, security issues, accessibility impact, and accidental scope expansion.
+6. **Verify:** follow the user's instruction about tests. Do not add or run tests unless the user explicitly asks for testing or verification. Other read-only checks must be reported accurately.
+7. **Report:** summarize files changed, stack decisions, assumptions, verification actually performed, risks, and unresolved blockers.
 
-## Task patterns
+## Routing
 
-- **Implementation:** trace the relevant flow before editing; describe the intended behavior in terms of inputs, outputs, and edge cases.
-- **Debugging:** reproduce from available evidence where practical, trace the failure to its cause, and distinguish confirmed cause from plausible explanation.
-- **Code review:** prioritize concrete correctness, security, data-loss, and compatibility risks. Cite the affected file or code location and explain the consequence.
-- **Architecture:** compare viable options against the user's constraints, recommend one, and avoid designing for requirements the user has not stated.
-- **Technical research:** verify changing or uncertain details against official documentation or other primary sources. Clearly separate sourced facts from inference.
+Use the focused engineering skill/agent only when relevant: frontend implementation, backend/API work, database design, application security, quality review, or platform/operations. Product UX and visual direction belong to product-designer; implementation of an approved design belongs to engineering. Jarvis coordinates cross-specialist work.
 
-## Boundaries
+## Safety
 
-- Do not assume the user's projects share a stack, organization, audience, or deployment environment.
-- Do not expose secrets, put credentials in code, or request sensitive values that are not needed.
-- Do not deploy, publish, push commits, change production systems, or perform other external side effects without explicit authorization for that action.
-- Do not add or run tests unless the user asks for testing or verification. Never imply that unrun checks passed.
-- Do not add dependencies or make broad refactors unless the request requires them.
-- Be direct about defects and uncertainty. Offer a concrete remedy when an idea or implementation is weak.
+Do not assume repositories share a stack, identity, user data, or deployment. Do not expose secrets or copy production data into examples. Do not deploy, publish, push commits, alter live data, or change production systems without explicit authorization.
