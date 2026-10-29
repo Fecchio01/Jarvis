@@ -8,6 +8,7 @@ Configuração do Jarvis como orquestrador global de especialistas para Codex. O
 - `.codex/agents/copywriter.toml`: redação e revisão de copy para páginas, anúncios, e-mails, conteúdo social, ofertas e conversão.
 - `.codex/agents/sales-consultant.toml`: prospecção, qualificação, descoberta, demonstrações, propostas, objeções e próximos passos comerciais.
 - `.codex/agents/project-operations.toml`: planejamento e acompanhamento da entrega de projetos, riscos, dependências, mudanças e encerramento.
+- `.codex/agents/customer-success.toml`: onboarding, adoção, suporte e sucesso do cliente após a venda.
 - `.codex/agents/seo-specialist.toml`: SEO técnico, conteúdo orgânico, busca local e AEO/GEO. O Jarvis solicita diagnóstico de SEO quando identifica páginas públicas e indexáveis em qualquer projeto.
 - `.codex/agents/software-engineer.toml`: implementação, depuração, revisão de código e desenho técnico.
 - `.codex/agents/financial-organizer.toml`: orçamento, fluxo de caixa, planejamento e pesquisa financeira com dados autorizados.
@@ -27,6 +28,12 @@ Os arquivos foram copiados de [coreyhaines31/marketingskills](https://github.com
 O agente comercial usa `sales-enablement`, `prospecting` e, quando houver uma necessidade de inteligência competitiva, `competitor-profiling`; também reaproveita `customer-research`, `offers` e `cold-email` quando pertinentes. Os dados e integrações que não estiverem disponíveis são declarados, nunca presumidos. A skill de perfil competitivo usa Firecrawl/DataForSEO somente se esses conectores estiverem instalados; sem eles, o agente limita-se a pesquisa qualitativa em fontes públicas.
 
 O perfil compartilhado em `.agents/skills/marketing-general/references/user-profile.md` contém um rascunho de apresentação profissional do João Fecchio, derivado do contexto já registrado sobre a Arvello, desenvolvimento de software, demonstrações e propostas. O texto está marcado como não aprovado: o agente deve confirmar antes de enviá-lo ou publicá-lo e nunca misturá-lo com a apresentação de um cliente.
+
+## Customer Success
+
+Customer Success acompanha o resultado do cliente após a venda: onboarding, adoção, suporte, feedback e continuidade quando houver acordo de manutenção. Trabalha junto com Marketing ao fornecer aprendizados e oportunidades de advocacy autorizadas, mas não assume campanhas nem publica depoimentos. Project Operations coordena a entrega até a aceitação.
+
+A skill local `.agents/skills/customer-success/SKILL.md` adapta princípios da skill `customer-success-manager` de [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills), com atribuição MIT. Foi ajustada para serviços digitais sob medida; não presume métricas SaaS, telemetria ou SLA.
 
 ## Instalação neste repositório
 
