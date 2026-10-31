@@ -5,6 +5,7 @@ $CodexHome = if ($env:CODEX_HOME) { $env:CODEX_HOME } else { Join-Path $HOME ".c
 $AgentsHome = Join-Path $CodexHome "agents"
 $SkillsHome = Join-Path $HOME ".agents/skills"
 $GlobalAgents = Join-Path $CodexHome "AGENTS.md"
+$UserPreferences = Join-Path $CodexHome "USER-PREFERENCES.md"
 $BeginMarker = "<!-- BEGIN JARVIS MANAGED GLOBAL INSTRUCTIONS -->"
 $EndMarker = "<!-- END JARVIS MANAGED GLOBAL INSTRUCTIONS -->"
 $NewLine = [Environment]::NewLine
@@ -25,6 +26,7 @@ if ([regex]::IsMatch($Current, $Pattern)) {
 Set-Content -Path $GlobalAgents -Value $Updated -Encoding UTF8
 
 Copy-Item -Path (Join-Path $RepoRoot ".codex/agents/*") -Destination $AgentsHome -Recurse -Force
+Copy-Item -Path (Join-Path $RepoRoot ".codex/USER-PREFERENCES.md") -Destination $UserPreferences -Force
 Copy-Item -Path (Join-Path $RepoRoot ".agents/skills/*") -Destination $SkillsHome -Recurse -Force
 
-Write-Output "Jarvis installed globally. Restart Codex to load the agents and skills."
+Write-Output "Jarvis installed globally. Restart Codex to load the agents, skills, and user preferences."
