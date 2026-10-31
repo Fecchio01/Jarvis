@@ -34,6 +34,7 @@ target.write_text(result, encoding="utf-8")
 PY
 
 cp -R "$repo_root/.codex/agents/." "$agents_home/"
+cp "$repo_root/.codex/USER-PREFERENCES.md" "$codex_home/USER-PREFERENCES.md"
 cp -R "$repo_root/.agents/skills/." "$skills_home/"
 
-printf 'Jarvis installed globally. Restart Codex to load the agents and skills.\n'
+printf 'Jarvis installed globally. Restart Codex to load the agents, skills, and user preferences.\n'
