@@ -9,7 +9,7 @@ Jarvis owns intake, user communication, specialist selection and delivery coordi
 | Intake and scope | Jarvis + Lead Editor | Confirmed brief, assets/rights inventory, target formats and any explicitly labeled assumptions |
 | Story and pre-production | Video Producer / Storyboard | Audience, objective, narrative beats, script outline, truthful hook, shot list and claim/reference notes |
 | Media prep and assembly | Lead Editor (FilmCraft) | ffprobe metadata when available, selects/transcript if possible, timecoded EDL, editable FilmCraft project and first cut |
-| Visual motion system and complex graphics | Motion Designer | Text visual-treatment guidance (wording/timing owned by Captions Editor), diagrams, graphic animation notes or Remotion source |
+| Motion design, full-video when requested | Motion Designer | Motion concept/style frames, timeline motion map, transitions, diagrams and animated graphic layers/source; text wording/timing remains with Captions Editor |
 | Sound | Audio Editor | Dialogue cleanup plan, music/SFX notes, measured audio review and rights/provenance |
 | All on-screen words, captions and versions | Captions, Kinetic Typography & Repurposing Editor | SRT/VTT or caption JSON, word-level timing, animated word captions, titles/overlay text inventory and timing, aspect/crop plan, safe-area notes and per-platform export list |
 | Independent review | Finishing / QC Reviewer | Read-only findings against the actual project/export and prioritized corrections |
@@ -29,7 +29,8 @@ Jarvis owns intake, user communication, specialist selection and delivery coordi
 - **Basic trim or cleanup:** Lead Editor; Audio Editor only if sound treatment is needed; QC when there is an export.
 - **Scripted explainer, ad or product demo:** Producer/Storyboard + Lead Editor; request copywriter or marketing support through Jarvis if positioning, campaign or persuasive copy needs their scope; add motion/audio/captions as needed; separate QC before final.
 - **Long-form source to social clips:** Lead Editor + Captions, Kinetic Typography & Repurposing Editor; producer only if story selection is unclear; add motion/audio selectively; QC the final variants.
-- **Motion-heavy explainer or kinetic-text edit:** Producer/Storyboard + Lead Editor + Captions Editor for all on-screen wording/word timing + Motion Designer for broader motion language or complex text animation; add audio as needed; QC rendered output.
+- **Motion-heavy explainer or video-wide animation request:** Producer/Storyboard + Lead Editor + Motion Designer for the visual motion system and requested full-timeline animation + Captions Editor for all on-screen wording/word timing; add audio as needed; QC rendered output.
+- **Kinetic-text edit:** Captions Editor owns all wording, word timing and text implementation + Motion Designer supplies/implements coordinated visual treatment and complex animation; Lead Editor integrates in FilmCraft and QC reviews the rendered output.
 - **Audio-led interview/podcast:** Lead Editor + Audio Editor; Captions, Kinetic Typography & Repurposing Editor for verbatim subtitles and clip variants; QC final exports.
 - **Workflow/tooling request:** Lead Editor documents the repeated production need and desired outcome. Jarvis routes technical design/implementation to software-engineer, and product design to product-designer when the tool has a user interface. Keep proposed tooling in its own repository/scope unless the user chooses an existing repo. ArtCraft can provide product/architecture context or a relevant installed Craft app, but it is not the renderer itself.
 
