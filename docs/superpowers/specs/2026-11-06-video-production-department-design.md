@@ -31,7 +31,7 @@ Turn Jarvis's single video-editor role into a coordinated video production depar
 
 ## Proposed team
 
-Jarvis remains the only user-facing orchestrator and assigns work across the department. The existing `video-editor` remains the **hands-on Lead Editor**, responsible for assembly, integration and the final handoff; it is not duplicated by a second editing agent. Jarvis routes distinct bounded stages to these specialists:
+Jarvis remains the only user-facing orchestrator and assigns work across the department. The existing `video-editor` remains the **hands-on Lead Editor / cut-maker**, responsible for assembly, integration and the final handoff; it is not duplicated by a second editing agent. FilmCraft is mandatory for actual editing. By default, the Lead Editor follows the user's script, selected takes, order and notes, and preserves spoken content. If the user explicitly delegates creative freedom, the Lead Editor may choose takes, order, pace and cuts, and select B-roll from supplied/approved assets; the Lead Editor delivers a complete first cut for user review and explains significant choices. The user's specific direction always takes precedence. Jarvis routes distinct bounded stages to these specialists:
 
 1. **Video Producer / Storyboard** — turns the brief into audience, objective, narrative beats, script outline, shot list, hook and production plan; owns factual claim checks against supplied references.
 2. **Motion Designer** — designs titles, lower thirds, callouts, diagrams and animation plans or Remotion compositions when applicable; keeps motion purposeful and respects the project's visual system.
@@ -39,7 +39,7 @@ Jarvis remains the only user-facing orchestrator and assigns work across the dep
 4. **Captions & Repurposing Editor** — prepares and checks SRT/VTT and burned-in captions, language variants when requested, platform reframes, safe areas, covers and per-platform export specs.
 5. **Finishing / QC Reviewer** — works read-only on the coherent export or project milestone; checks duration, dimensions, playback, audio, captions, continuity, rights/provenance, safe areas and delivery package, then returns prioritized fixes to Jarvis.
 
-Each role has a bounded assignment and acceptance criteria. The Lead Editor inspects available media, creates transcript/selects when tools allow, prepares a timecoded EDL and pacing map, assembles the story, and owns continuity, cuts and visual color consistency. It integrates the other specialists' work and resolves editorial conflicts. QC is a separate read-only review; a specialist should not approve their own final work.
+Each role has a bounded assignment and acceptance criteria. The Lead Editor inspects available media, creates transcript/selects when tools allow, prepares a timecoded EDL and pacing map, assembles the story, and owns continuity, cuts and visual color consistency. If FilmCraft is unavailable, no other editor is substituted; the edit is marked pending. The Lead Editor integrates the other specialists' work and resolves editorial conflicts. QC is a separate read-only review; a specialist should not approve their own final work.
 
 ## Workflow and handoffs
 
