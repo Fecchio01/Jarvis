@@ -1,26 +1,56 @@
-# Production recipes
+# Production workflows
 
-## Reels / TikTok / Shorts
-Input: raw clips + brief. Output: 1080x1920 9:16 H.264 MP4 (unless specified), burned-in captions + optional SRT, cover, source project.
-- Identify strongest truthful hook; prioritize clear speech and natural pacing.
-- Build timecoded rough cut and select relevant B-roll.
-- Apply captions with mobile-safe margins, emphasis only on key words, accessible contrast.
-- Add motion, punch-ins, SFX and music only when they improve comprehension.
-- Verify vertical crop does not cut faces or product details; check platform UI overlays.
-- QA export by playing beginning, transitions, and ending.
+## Routing and ownership
 
-## Long-form YouTube
-Input: footage, audio, outline. Output: 16:9 1920x1080 or source resolution, chapters, thumbnail, captions, source project.
-- Assemble narrative; remove repeated points, not essential context.
-- Normalize dialogue, apply consistent color and sound, use restrained lower thirds.
-- Add B-roll, callouts, screen recordings and explanatory animation.
-- Inspect continuity, music licensing, export and captions.
+Jarvis owns intake, user communication, specialist selection and delivery coordination. It asks the Lead Editor to own the edit. It brings in a specialist only when that stage is relevant; a simple cut does not need every role.
 
-## Brand social design
-Input: brand kit + copy. Output: editable post/carousel, correct dimensions, export PNG/JPEG as requested.
-- Respect typography, spacing, hierarchy, logo clear space, and contrast.
-- Create multiple variations only when helpful.
-- Validate factual claims and spelling.
+| Stage | Owner | Handoff |
+|---|---|---|
+| Intake and scope | Jarvis + Lead Editor | Confirmed brief, assets/rights inventory, target formats and any explicitly labeled assumptions |
+| Story and pre-production | Video Producer / Storyboard | Audience, objective, narrative beats, script outline, truthful hook, shot list and claim/reference notes |
+| Media prep and assembly | Lead Editor | ffprobe metadata when available, selects/transcript if possible, timecoded EDL and rough cut |
+| Motion | Motion Designer | Titles, lower thirds, callouts, diagrams, animation notes or Remotion source |
+| Sound | Audio Editor | Dialogue cleanup plan, music/SFX notes, measured audio review and rights/provenance |
+| Captions and versions | Captions & Repurposing Editor | SRT/VTT, burned-caption spec, aspect/crop plan, safe-area notes and per-platform export list |
+| Independent review | Finishing / QC Reviewer | Read-only findings against the actual project/export and prioritized corrections |
+| Final integration and handoff | Lead Editor + Jarvis | Actual files, editable source when possible, credits/provenance, technical details and QC status |
 
-## Handoff / feedback
-Store per-project brief, EDL, assets manifest, decisions, outputs and revision notes. On feedback, preserve approved choices and modify only specified dimensions.
+## Stage sequence
+
+1. **Intake.** Record goal, audience, platform(s), duration, language, CTA, source materials, brand kit, media rights and delivery needs. Keep project context scoped to the current workspace. If a missing answer would materially change the edit, ask; otherwise write down a reversible assumption.
+2. **Pre-production.** Producer returns a concise brief, narrative, script/storyboard, shot list and truthful hook. Jarvis gets user direction for choices that materially change the deliverable. Claims are grounded in supplied references.
+3. **Media prep.** Lead Editor checks available metadata with `ffprobe`, preserves originals, notes missing/corrupt/unreadable inputs and prepares selects/transcript/EDL only when tools and source material support them.
+4. **Assembly and finish.** Lead Editor makes the cut. Motion, audio and caption specialists provide bounded layers/specifications. The Lead Editor integrates those layers and owns continuity, pace and color consistency. Use FFmpeg/Remotion/Craft apps only when present and appropriate; verify current environment access.
+5. **QC.** Jarvis assigns a read-only reviewer who did not make the final edit. The reviewer checks the real artifact: playback, start/middle/end continuity, duration, frame size/aspect ratio, safe areas, dialogue intelligibility, clipping, caption spelling/timing, color consistency, rights/provenance and delivery completeness. A finding must point to the artifact and timecode when possible.
+6. **Revision and handoff.** Lead Editor applies agreed corrections. Deliver final media only if it exists and has been checked; also include editable source where feasible, subtitles, thumbnail/cover if requested, credits, parameters and QC notes. Otherwise state exactly what is pending and provide the strongest completed intermediate (such as EDL or render spec).
+
+## Routing by request
+
+- **Basic trim or cleanup:** Lead Editor; Audio Editor only if sound treatment is needed; QC when there is an export.
+- **Scripted explainer, ad or product demo:** Producer/Storyboard + Lead Editor; request copywriter or marketing support through Jarvis if positioning, campaign or persuasive copy needs their scope; add motion/audio/captions as needed; separate QC before final.
+- **Long-form source to social clips:** Lead Editor + Captions & Repurposing Editor; producer only if story selection is unclear; add motion/audio selectively; QC the final variants.
+- **Motion-heavy explainer:** Producer/Storyboard + Lead Editor + Motion Designer; add audio/captions as needed; QC rendered output.
+- **Audio-led interview/podcast:** Lead Editor + Audio Editor; Captions & Repurposing Editor for subtitle/clip variants; QC final exports.
+- **Workflow/tooling request:** Lead Editor documents the repeated production need and desired outcome. Jarvis routes technical design/implementation to software-engineer, and product design to product-designer when the tool has a user interface. Keep proposed tooling in its own repository/scope unless the user chooses an existing repo. ArtCraft can provide product/architecture context or a relevant installed Craft app, but it is not the renderer itself.
+
+## Project handoff structure
+
+Within the active project's authorized workspace, organize what exists under a single video project folder:
+
+```text
+video-project/
+  BRIEF.md
+  STYLE_GUIDE.md            # only when the user/project has approved one
+  assets-manifest.md        # source, owner, license/permission, usage
+  edit/EDL.md
+  captions/                 # SRT/VTT as requested
+  source-project/           # editable timeline/Remotion project when feasible
+  outputs/                  # rendered exports only
+  QC.md
+```
+
+Do not create empty placeholders for files that are not needed. Keep source footage outside generated output paths; never overwrite or delete originals.
+
+## Existing job runner
+
+The GitHub Actions runner accepts committed JSON jobs under `agents/design/video-editor/jobs/` with `id`, an input path beneath `agents/design/video-editor/media/`, and `format` (`short` or `long`). Using it transfers the named source file to the GitHub repository and uploads the rendered output/report as workflow artifacts retained for seven days. Get explicit user authorization for both transfers before adding/committing media or a job; a request to render does not itself authorize them. Prefer local processing when available. Each workflow run invokes every committed job; FFmpeg writes with overwrite enabled, so an existing output can be rendered again and replaced. It reframes/encodes with FFmpeg and probes basic output metadata. It does not transcribe, choose clips, edit narrative, generate captions, add motion graphics, or perform creative QC. No job is implied by this department design.

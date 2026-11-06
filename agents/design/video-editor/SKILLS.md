@@ -1,14 +1,25 @@
-# Skill acquisition plan — review before installation
+# Video Production Skill Map
 
-These are proposed candidates, NOT installed or security-audited.
+The named skills below are present under `.agents/skills/` in this repository and are copied by `scripts/install-global.ps1`. Read only skills relevant to the current stage; an installed skill is an instruction set, not proof that a runtime or external integration is connected. `motion-foundations` and `motion-patterns` are optional and should be used only when separately installed.
 
-1. Video Repurposing — https://skillmd.com/skills/naveedharri/video-repurposing
-   Purpose: long-form to short-form extraction, timestamps, captions and repeatable editing.
-2. Remotion — https://skillmd.com/skills/podo/remotion
-   Purpose: programmatic motion graphics, kinetic typography, animated diagrams and branded sequences.
-3. Social Video Formatter — https://skillmd.com/skills/skillmedev/social-video-formatter
-   Purpose: vertical crops, social safe areas, captions, hooks and exports.
+| Production need | Skills |
+|---|---|
+| Edit planning, media workflow and final quality | `video-editing` |
+| Long-form source to short-form clips | `video-repurposing`, `video-editing` |
+| Social reframe, safe areas and platform exports | `social-video-formatter` (directory: `social-video-formatting`), `remotion-captions` |
+| Captions and subtitle presentation | `remotion-captions`, `social-video-formatter` |
+| Motion design and animation choices | `motion-design`; optionally `motion-foundations` or `motion-patterns` when separately installed |
+| Remotion project authoring and rendering | `remotion-best-practices`, `remotion-create`, `remotion-render` |
+| Campaign/script positioning or persuasive copy | Route to Jarvis's marketing/copywriter specialists as needed |
 
-Before enabling: inspect source repository, SKILL.md and all scripts; check license, network access, secrets usage, dependency installation and destructive commands. Pin vetted revisions. Skills are workflows/instructions, not fine-tuned model weights.
+## Tool checks
 
-Tooling priorities: FFmpeg/ffprobe, Remotion/React, transcription when available, Descript for transcript-based edits, Runway for authorized generative footage, Canva for brand assets. Integrations require connection and may incur credits.
+- Use `ffprobe` to inspect source and exported media when available; use FFmpeg for reliable cuts, crops, audio processing and encodes.
+- Use Remotion only when Node/dependencies and a suitable project are available. Keep source projects reproducible.
+- Use a Craft app only when it is relevant, installed/available, and the current session has actual access to the user's environment. The ArtCraft Launcher itself manages apps; it does not edit/render.
+- Check live connector state and permission before using Descript, Runway, Canva or any other external service. Do not send any source footage or project media to an external service/provider without explicit user authorization.
+- The current committed-job runner only reframes/encodes. Do not describe it as an autonomous editing or caption pipeline.
+
+## Third-party skill handling
+
+Use only the installed skill directories. Do not download, install or execute new third-party skills/scripts as part of a video job without reviewing their source, license, network access, secrets handling, dependencies and destructive behavior. Skills do not fine-tune model weights.

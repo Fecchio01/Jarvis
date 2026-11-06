@@ -19,7 +19,12 @@ Configuração do Jarvis como orquestrador global de especialistas para Codex. O
 - `.codex/agents/application-security-engineer.toml`: segurança de aplicações, autenticação, dados e isolamento.
 - `.codex/agents/financial-organizer.toml`: orçamento, fluxo de caixa, planejamento e pesquisa financeira com dados autorizados.
 - `.codex/agents/product-designer.toml`: UX de produtos digitais e sistemas de interface.
-- `.codex/agents/video-editor.toml`: edição e adaptação de conteúdo audiovisual.
+- `.codex/agents/video-editor.toml`: Lead Editor prático, responsável pela montagem, integração e entrega audiovisual.
+- `.codex/agents/video-producer.toml`: brief, narrativa, roteiro/storyboard e shot list.
+- `.codex/agents/motion-designer.toml`: títulos, lower thirds, gráficos e motion design.
+- `.codex/agents/audio-editor.toml`: diálogo, mix, trilha e desenho de som com direitos documentados.
+- `.codex/agents/captions-repurposing-editor.toml`: legendas, versões e adaptação por plataforma.
+- `.codex/agents/video-qc-reviewer.toml`: controle de qualidade independente e somente leitura.
 
 O Jarvis decide quais especialistas são relevantes para cada solicitação. Os agentes executam autonomamente as partes delegadas e devolvem achados e entregáveis ao Jarvis. Não há execução contínua em segundo plano para os agentes de projeto.
 
@@ -71,4 +76,7 @@ O protocolo no repositório define o comportamento do agente. A automação reco
 
 - O diagnóstico de SEO é acionado pelo Jarvis quando o projeto contém páginas públicas indexáveis. Painéis internos, CRMs privados e protótipos não são tratados como páginas de busca.
 - O agente de produto usa `product-design`, `frontend-design`, `ui-ux-pro-max`, `web-design-guidelines` e `motion-design` quando pertinentes.
-- O editor de vídeo usa `video-editing`, `video-repurposing` e `social-video-formatting`. O runner FFmpeg existente formata mídia já preparada; serviços externos exigem conexão própria.
+- A equipe de produção audiovisual combina Lead Editor, produtor/storyboard, motion, áudio, legendas/repurpose e revisão independente. O Jarvis coordena e chama apenas os papéis relevantes. Os detalhes de escopo e handoff estão em `agents/design/video-editor/WORKFLOWS.md`.
+- O runner FFmpeg existente apenas reenquadra e codifica jobs explícitos; não escolhe cenas, monta narrativa, gera legendas ou cria motion. Usar a fila GitHub Actions envia a fonte ao repositório e carrega saída/relatório como artefato por sete dias; precisa de autorização explícita para ambos os envios. Um pedido de renderização, sozinho, não autoriza a transferência.
+- Serviços externos e apps locais exigem disponibilidade e acesso reais; upload, publicação e créditos pagos exigem autorização.
+- A equipe pode produzir com apps relevantes da Craft App Suite quando estiverem disponíveis no ambiente do usuário. O ArtCraft Launcher administra esses apps e também pode servir de contexto técnico para propostas separadas de ferramentas próprias; ele mesmo não edita nem renderiza vídeo.
