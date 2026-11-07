@@ -7,7 +7,7 @@ Jarvis owns intake, user communication, specialist selection and delivery coordi
 | Stage | Owner | Handoff |
 |---|---|---|
 | Intake and scope | Jarvis + Lead Editor | Confirmed brief, assets/rights inventory, target formats and any explicitly labeled assumptions |
-| Story and pre-production | Video Producer / Storyboard | Audience, objective, narrative beats, script outline, truthful hook, shot list and claim/reference notes |
+| Story and pre-production | Video Producer / Storyboard | Audience/objective, narrative spine, storyboard, scene/shot list, visual evidence plan, timing and factual source map; sends script briefs to Copywriter |
 | Media prep and assembly | Lead Editor (FilmCraft) | ffprobe metadata when available, selects/transcript if possible, timecoded EDL, editable FilmCraft project and first cut |
 | Motion design, full-video when requested | Motion Designer | Motion concept/style frames, timeline motion map, transitions, diagrams and animated graphic layers/source; text wording/timing remains with Captions Editor |
 | Sound | Audio Editor | Dialogue cleanup plan, music/SFX notes, measured audio review and rights/provenance |
@@ -18,7 +18,7 @@ Jarvis owns intake, user communication, specialist selection and delivery coordi
 ## Stage sequence
 
 1. **Intake.** Record goal, audience, platform(s), duration, language, CTA, source materials, brand kit, media rights and delivery needs. Keep project context scoped to the current workspace. If a missing answer would materially change the edit, ask; otherwise write down a reversible assumption.
-2. **Pre-production.** Producer returns a concise brief, narrative, script/storyboard, shot list and truthful hook. Jarvis gets user direction for choices that materially change the deliverable. Claims are grounded in supplied references.
+2. **Pre-production.** Producer returns a concise brief, narrative spine, storyboard, shot list, visual evidence plan, timing and source map. The producer preserves supplied script and user direction. When a spoken script needs writing or revision, the Copywriter drafts it from the producer's brief. Jarvis gets user direction for choices that materially change the deliverable; claims are grounded in supplied references.
 3. **Media prep.** Lead Editor checks available metadata with `ffprobe`, preserves originals, notes missing/corrupt/unreadable inputs and prepares selects/transcript/EDL only when tools and source material support them. FilmCraft is mandatory; if unavailable, do not switch editors and mark the edit pending.
 4. **Assembly and finish.** Lead Editor makes the cut in FilmCraft. By default, follow the user's script, selected takes, order and notes; preserve speech, and do not trim pauses, repetitions or mistakes unless asked. When the user explicitly delegates creative control, the Lead Editor may choose takes, order, pace, cuts and B-roll from supplied/approved assets, then delivers a complete first cut for user review with a short rationale. User choices override those decisions. The Captions Editor owns all video text: subtitles, kinetic word captions, titles and labels. Motion Designer owns broader motion systems and complex graphic animation, coordinating custom animated text. Audio and motion specialists provide their layers; the Lead Editor integrates them and owns continuity and color consistency.
 5. **QC.** Jarvis assigns a read-only reviewer who did not make the final edit. The reviewer checks the real artifact: playback, start/middle/end continuity, duration, frame size/aspect ratio, safe areas, dialogue intelligibility, clipping, caption spelling/timing, color consistency, rights/provenance and delivery completeness. A finding must point to the artifact and timecode when possible.
@@ -27,7 +27,7 @@ Jarvis owns intake, user communication, specialist selection and delivery coordi
 ## Routing by request
 
 - **Basic trim or cleanup:** Lead Editor; Audio Editor only if sound treatment is needed; QC when there is an export.
-- **Scripted explainer, ad or product demo:** Producer/Storyboard + Lead Editor; request copywriter or marketing support through Jarvis if positioning, campaign or persuasive copy needs their scope; add motion/audio/captions as needed; separate QC before final.
+- **Scripted explainer, ad or product demo:** Producer/Storyboard + Copywriter + Lead Editor; Marketing supports positioning/campaign strategy when relevant; add motion/audio/captions as needed; separate QC before final. If the user supplies the finished script, the producer storyboards around it without rewriting.
 - **Long-form source to social clips:** Lead Editor + Captions, Kinetic Typography & Repurposing Editor; producer only if story selection is unclear; add motion/audio selectively; QC the final variants.
 - **Motion-heavy explainer or video-wide animation request:** Producer/Storyboard + Lead Editor + Motion Designer for the visual motion system and requested full-timeline animation + Captions Editor for all on-screen wording/word timing; add audio as needed; QC rendered output.
 - **Kinetic-text edit:** Captions Editor owns all wording, word timing and text implementation + Motion Designer supplies/implements coordinated visual treatment and complex animation; Lead Editor integrates in FilmCraft and QC reviews the rendered output.
