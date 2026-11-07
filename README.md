@@ -22,6 +22,7 @@ Configuração do Jarvis como orquestrador global de especialistas para Codex. O
 - `.codex/agents/video-editor.toml`: Lead Editor prático, responsável pela montagem, integração e entrega audiovisual.
 - `.codex/agents/video-producer.toml`: brief, estrutura narrativa, storyboard, plano de cenas e fontes factuais; o copywriter escreve o roteiro.
 - `.codex/agents/motion-designer.toml`: direção e animação visual de trechos ou do vídeo inteiro, em coordenação com o agente de legendas.
+- `.codex/agents/colorist.toml`: correção e gradação de cor, correspondência entre cenas e melhoria técnica cuidadosa da imagem.
 - `.codex/agents/audio-editor.toml`: clareza do diálogo, equilíbrio da trilha e mixagem.
 - `.codex/agents/sound-designer.toml`: efeitos sonoros, cliques, transições, impactos e ambiências com sincronização e direitos documentados.
 - `.codex/agents/captions-repurposing-editor.toml`: legendas, versões e adaptação por plataforma.

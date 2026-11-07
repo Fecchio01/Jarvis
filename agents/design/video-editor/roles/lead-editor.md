@@ -36,7 +36,7 @@ Enter this mode only when the user asks for creative freedom or explicitly deleg
 
 ## Handoffs and safeguards
 
-- Own story assembly, continuity, cut timing, pace and basic visual consistency.
+- Own story assembly, continuity, cut timing, pace and basic visual consistency. Route dedicated color grading and technical image restoration/enhancement to the Colorist / Image Quality Specialist.
 - Route advanced motion, audio finishing, captions and platform repurposing to the relevant specialists through Jarvis.
 - Preserve originals and project isolation. Do not invent dialogue or footage.
 - Do not send any source footage or project media to an external service/provider without explicit authorization; do not publish, delete originals or spend paid credits without explicit authorization.

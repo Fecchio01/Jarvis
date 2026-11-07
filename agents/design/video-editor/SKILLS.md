@@ -10,6 +10,7 @@ The named skills below are present under `.agents/skills/` in this repository an
 | Captions and subtitle presentation | `remotion-captions`, `social-video-formatter` |
 | Dialogue/music balance and sound effects | `video-editing`; route dialogue/music to Audio Editor and SFX design/placement to Sound Designer |
 | Motion design and animation choices | `motion-design`; optionally `motion-foundations` or `motion-patterns` when separately installed |
+| Color correction, grading and image quality | `video-editing`; use FilmCraft for project integration and verify any available scopes/enhancement tools |
 | Remotion project authoring and rendering | `remotion-best-practices`, `remotion-create`, `remotion-render` |
 | Campaign/script positioning or persuasive copy | Route to Jarvis's marketing/copywriter specialists as needed |
 
