@@ -20,9 +20,10 @@ Configuração do Jarvis como orquestrador global de especialistas para Codex. O
 - `.codex/agents/financial-organizer.toml`: orçamento, fluxo de caixa, planejamento e pesquisa financeira com dados autorizados.
 - `.codex/agents/product-designer.toml`: UX de produtos digitais e sistemas de interface.
 - `.codex/agents/video-editor.toml`: Lead Editor prático, responsável pela montagem, integração e entrega audiovisual.
-- `.codex/agents/video-producer.toml`: brief, narrativa, roteiro/storyboard e shot list.
-- `.codex/agents/motion-designer.toml`: títulos, lower thirds, gráficos e motion design.
-- `.codex/agents/audio-editor.toml`: diálogo, mix, trilha e desenho de som com direitos documentados.
+- `.codex/agents/video-producer.toml`: brief, estrutura narrativa, storyboard, plano de cenas e fontes factuais; o copywriter escreve o roteiro.
+- `.codex/agents/motion-designer.toml`: direção e animação visual de trechos ou do vídeo inteiro, em coordenação com o agente de legendas.
+- `.codex/agents/audio-editor.toml`: clareza do diálogo, equilíbrio da trilha e mixagem.
+- `.codex/agents/sound-designer.toml`: efeitos sonoros, cliques, transições, impactos e ambiências com sincronização e direitos documentados.
 - `.codex/agents/captions-repurposing-editor.toml`: legendas, versões e adaptação por plataforma.
 - `.codex/agents/video-qc-reviewer.toml`: controle de qualidade independente e somente leitura.
 

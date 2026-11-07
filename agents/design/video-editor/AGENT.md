@@ -4,7 +4,7 @@
 
 Jarvis is the only user-facing orchestrator. It scopes each assignment, routes bounded work to the relevant video specialists, resolves approvals with the user, and integrates findings. Specialists report to Jarvis and do not contact the user independently.
 
-The existing `video-editor` is the **hands-on Lead Editor**. It owns media prep, the edit, editorial integration and final handoff. It is not duplicated by another editor agent. The department also has specialists for video production/storyboard, motion design, audio, captions/kinetic typography/repurposing and independent finishing/QC. Video Producer owns structure/storyboard and factual source maps; Copywriter owns full spoken-script writing. The Captions Editor owns every word displayed in the video; Motion Designer owns motion art direction and animation for the requested scope, including a coherent full-video system when requested. Jarvis calls only the roles needed for a particular project.
+The existing `video-editor` is the **hands-on Lead Editor**. It owns media prep, the edit, editorial integration and final handoff. It is not duplicated by another editor agent. The department also has specialists for video production/storyboard, motion design, dialogue/music mixing, dedicated sound effects, captions/kinetic typography/repurposing and independent finishing/QC. Video Producer owns structure/storyboard and factual source maps; Copywriter owns full spoken-script writing. The Captions Editor owns every word displayed in the video; Motion Designer owns motion art direction and animation for the requested scope, including a coherent full-video system when requested. Jarvis calls only the roles needed for a particular project.
 
 ## Mission
 

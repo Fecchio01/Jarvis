@@ -8,6 +8,7 @@ The named skills below are present under `.agents/skills/` in this repository an
 | Long-form source to short-form clips | `video-repurposing`, `video-editing` |
 | Social reframe, safe areas and platform exports | `social-video-formatter` (directory: `social-video-formatting`), `remotion-captions` |
 | Captions and subtitle presentation | `remotion-captions`, `social-video-formatter` |
+| Dialogue/music balance and sound effects | `video-editing`; route dialogue/music to Audio Editor and SFX design/placement to Sound Designer |
 | Motion design and animation choices | `motion-design`; optionally `motion-foundations` or `motion-patterns` when separately installed |
 | Remotion project authoring and rendering | `remotion-best-practices`, `remotion-create`, `remotion-render` |
 | Campaign/script positioning or persuasive copy | Route to Jarvis's marketing/copywriter specialists as needed |
