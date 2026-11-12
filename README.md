@@ -5,8 +5,9 @@ Configuração do Jarvis como orquestrador global de especialistas para Codex. O
 ## Agentes
 
 - `.codex/agents/marketing.toml`: estratégia, posicionamento, campanhas e desempenho.
+- `.codex/agents/prospecting.toml`: pesquisa de ICP e geração de listas de leads; pertence à equipe de Marketing em `agents/marketing/prospecting/`.
 - `.codex/agents/copywriter.toml`: redação e revisão de copy para páginas, anúncios, e-mails, conteúdo social, ofertas e conversão.
-- `.codex/agents/sales-consultant.toml`: prospecção, qualificação, descoberta, demonstrações, propostas, objeções e próximos passos comerciais.
+- `.codex/agents/sales-consultant.toml`: qualificação comercial dos leads pesquisados, descoberta, demonstrações, propostas, objeções e próximos passos comerciais.
 - `.codex/agents/project-operations.toml`: planejamento e acompanhamento da entrega de projetos, riscos, dependências, mudanças e encerramento.
 - `.codex/agents/customer-success.toml`: onboarding, adoção, suporte e sucesso do cliente após a venda.
 - `.codex/agents/seo-specialist.toml`: SEO técnico, conteúdo orgânico, busca local e AEO/GEO. O Jarvis solicita diagnóstico de SEO quando identifica páginas públicas e indexáveis em qualquer projeto.
@@ -36,9 +37,15 @@ O agente copywriter escolhe e aplica as skills pertinentes ao formato e à etapa
 
 Os arquivos foram copiados de [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) no commit `0cd9b3a0ef4c411a1d690419ce843f2a1da32cce`. Consulte `THIRD-PARTY-NOTICES.md` para licença e atribuição.
 
+## Prospecção na equipe de Marketing
+
+O agente `.codex/agents/prospecting.toml` cuida de pesquisa de público/ICP, geração de leads e listas com fontes verificáveis. Ele usa `prospecting` para pesquisa geral B2B/SaaS e sinais públicos. Usa `prospeccao-google` em um fluxo separado para negócios locais; esse workflow depende do conector Apify e de autorização explícita antes de gerar qualquer custo, seguindo o limite fixo de US$ 0,60 da skill. Não misture os métodos. O agente não contata leads nem altera CRM.
+
+Sales-consultant recebe as listas para qualificação comercial, descoberta, estratégia de oportunidade e propostas. O Jarvis coordena o handoff quando a solicitação inclui pesquisa e trabalho comercial.
+
 ## Skills de vendas e apresentação do usuário
 
-O agente comercial usa `sales-enablement`, `prospecting` e, quando houver uma necessidade de inteligência competitiva, `competitor-profiling`; também reaproveita `customer-research`, `offers` e `cold-email` quando pertinentes. Os dados e integrações que não estiverem disponíveis são declarados, nunca presumidos. A skill de perfil competitivo usa Firecrawl/DataForSEO somente se esses conectores estiverem instalados; sem eles, o agente limita-se a pesquisa qualitativa em fontes públicas.
+O agente comercial usa `sales-enablement` e, quando houver uma necessidade de inteligência competitiva, `competitor-profiling`; também reaproveita `customer-research`, `offers` e `cold-email` quando pertinentes. O agente prospecting da equipe de Marketing usa as skills `prospecting` e `prospeccao-google` para geração de listas. Os dados e integrações que não estiverem disponíveis são declarados, nunca presumidos. A skill de perfil competitivo usa Firecrawl/DataForSEO somente se esses conectores estiverem instalados; sem eles, o agente limita-se a pesquisa qualitativa em fontes públicas.
 
 O perfil compartilhado em `.agents/skills/marketing-general/references/user-profile.md` contém um rascunho de apresentação profissional do João Fecchio, derivado do contexto já registrado sobre a Arvello, desenvolvimento de software, demonstrações e propostas. O texto está marcado como não aprovado: o agente deve confirmar antes de enviá-lo ou publicá-lo e nunca misturá-lo com a apresentação de um cliente.
 
