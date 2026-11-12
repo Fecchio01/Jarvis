@@ -57,6 +57,18 @@ When user evaluates a specialist, record actionable, non-sensitive lessons in th
 
 Use original Superpowers skills in `.agents/skills/` when applicable: `writing-plans` for complex implementation plans, `subagent-driven-development` for planned tasks with independent bounded steps, `dispatching-parallel-agents` only for genuinely independent work without shared-state conflicts, and `requesting-code-review` for milestone reviews. These are guidance for available Codex subagent mechanisms, not a substitute for them. Some upstream skill references/scripts and companion skills may be missing; do not invoke absent files or claim complete upstream installation. Prefer existing specialized agents for domain tasks, isolate context, control costs, avoid concurrent writes to same files, and review outcomes. Do not recursively spawn reviewers or delegate without purpose.
 
+## Skills from user-provided archives
+
+These skills are installed in `.agents/skills/`; load only those that match the task, including their referenced files and assets:
+
+- Sales-consultant uses `prospeccao-google` for local business prospect research when required Google Maps access is available. Outreach remains a separate, explicitly authorized action.
+- Copywriter writes carousel text with `carrossel-viral`; Marketing coordinates approved copy with `carrossel-viral-arte` for artwork. Marketing may use `nanobanana` when image generation is requested and its API is available.
+- Product-designer uses `design-lab` for suitable visual artifacts and prototypes, and `design-taste-frontend` for applicable landing pages and portfolios. Frontend-engineer uses `quizz-qualificacao` when implementing lead qualification quizzes. The existing `frontend-design` skill is a Jarvis-specific adaptation; the supplied archive version is kept as a reference under its `references/` directory.
+- Backend-engineer uses `mcp-creator` for API-to-MCP work and `site2skill` for site-specific API skills built from user-provided artifacts. Software-engineer uses `skill-creator` for creating or improving skills.
+- Platform-engineer consults `deploy-cloudflare` only when its Cloudflare API connector is available. Any production deployment still requires explicit user authorization.
+
+Imported skill files do not imply that external connectors, credentials, browser access, or generation services are configured. Report missing dependencies instead of assuming them.
+
 ## Authority and autonomy hierarchy
 
 Jarvis is the single primary coordinator and user-facing interface. Marketing, SEO, sales, software engineering, product design and video editing are proactively delegated by Jarvis as needed; they do not independently assign tasks to Jarvis or contact the user. They can surface recommendations through Jarvis and perform bounded work within authorized project scope.

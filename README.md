@@ -82,3 +82,9 @@ O protocolo no repositório define o comportamento do agente. A automação reco
 - O runner FFmpeg existente apenas reenquadra e codifica jobs explícitos; não escolhe cenas, monta narrativa, gera legendas ou cria motion. Usar a fila GitHub Actions envia a fonte ao repositório e carrega saída/relatório como artefato por sete dias; precisa de autorização explícita para ambos os envios. Um pedido de renderização, sozinho, não autoriza a transferência.
 - Serviços externos e apps locais exigem disponibilidade e acesso reais; upload, publicação e créditos pagos exigem autorização.
 - A equipe pode produzir com apps relevantes da Craft App Suite quando estiverem disponíveis no ambiente do usuário. O ArtCraft Launcher administra esses apps e também pode servir de contexto técnico para propostas separadas de ferramentas próprias; ele mesmo não edita nem renderiza vídeo.
+
+## Skills adicionais
+
+As skills recebidas nos ZIPs do usuário estão em `.agents/skills/` e são roteadas aos agentes pelo `AGENTS.md` e pelas instruções em `.codex/agents/`. O conjunto inclui prospecção local, quizz de qualificação, criação de skills para sites, criação e avaliação de skills, texto e arte de carrossel, deploy Cloudflare, ferramentas de design, autoria de MCP e conteúdo Instagram com Nano Banana. Carregue cada skill apenas quando o pedido corresponder e confirme a disponibilidade de suas ferramentas externas.
+
+A pasta já continha uma adaptação Jarvis de `frontend-design`; ela foi mantida como skill ativa. A versão do ZIP está preservada em `.agents/skills/frontend-design/references/frontend-design-provided-archive.md` para consulta sem colisão de nomes.

@@ -1,0 +1,8 @@
+{
+  "skill_name": "design-lab",
+  "evals": [
+    {"id": "deck", "prompt": "Faz um deck de 6 slides sobre os benefícios de automação com IA pra pequenos negócios. Público: donos de pequenos negócios (não técnicos). Duração: 5 minutos. Aparência profissional e limpa, você decide a estética.", "expected_output": "Deck HTML 1920x1080 com deck-stage, ~6 sections, escala de tipo consistente (>=24px), títulos paralelos, pouco texto por slide, verificado.", "files": []},
+    {"id": "landing", "prompt": "Cria uma landing page de captura pra um ebook gratuito de produtividade pra freelancers. Uma direção visual editorial e minimalista. Precisa ter hero com formulário de email, 3 benefícios, e prova social.", "expected_output": "Landing HTML autocontida, direção editorial coesa, hero+form+beneficios+prova, tipografia distinta (não Inter/Arial), responsiva.", "files": []},
+    {"id": "doc", "prompt": "Monta uma proposta comercial de uma página, pronta pra exportar em PDF, pra um serviço de consultoria de automacao de processos. Deve ter resumo, escopo, investimento e proximos passos.", "expected_output": "Documento HTML com receita de print (main.doc + doc-frame), h1 primeiro, tipografia de doc, sem rasterizacao, imprimivel limpo.", "files": []}
+  ]
+}

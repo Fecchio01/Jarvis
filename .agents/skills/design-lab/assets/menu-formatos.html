@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Design Lab — Catálogo de formatos</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --ink:#17171b; --paper:#f4f3ef; --card:#fbfaf7; --line:#e0ddd5; --mut:#6d6a63;
+    --accent:#2f54eb; --sans:'Space Grotesk',system-ui,sans-serif; --mono:'Space Mono',monospace;
+  }
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;padding-bottom:70px;
+    background-image:radial-gradient(90% 60% at 100% 0,rgba(47,84,235,.05),transparent 60%);}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,48px);}
+  header{padding:clamp(38px,6vw,72px) 0 6px;}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);}
+  header h1{font-weight:700;font-size:clamp(30px,5vw,52px);letter-spacing:-.02em;margin-top:14px;line-height:1;}
+  header p{color:var(--mut);font-size:16px;margin-top:12px;max-width:64ch;line-height:1.55;}
+  header p b{color:var(--ink);}
+  .rule{height:1px;background:var(--line);margin:clamp(26px,4vw,40px) 0 0;position:relative;}
+  .rule::before{content:"";position:absolute;left:0;top:0;width:90px;height:1px;background:var(--accent);}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:26px;margin-top:34px;}
+  .fmt{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;
+    box-shadow:0 8px 24px rgba(20,18,10,.05);}
+  .fmt .prev{height:180px;background:#eceae3;border-bottom:1px solid var(--line);position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;padding:16px;}
+  .fmt .meta{padding:15px 17px 18px;}
+  .fmt .meta .n{font-family:var(--mono);font-size:11px;color:var(--accent);}
+  .fmt .meta h3{font-weight:700;font-size:17px;margin-top:3px;}
+  .fmt .meta p{font-size:12.5px;color:var(--mut);line-height:1.45;margin-top:5px;}
+  .fmt .meta .dim{font-family:var(--mono);font-size:10.5px;color:#a5a199;margin-top:8px;}
+
+  /* ── mini-render neutro por formato (cinza + 1 acento) ── */
+  .m{background:#fff;border:1px solid #d8d5cc;box-shadow:0 4px 12px rgba(0,0,0,.06);position:relative;overflow:hidden;}
+  .l{background:#d9d6cd;border-radius:2px;display:block;}
+  .acc{background:var(--accent);}
+  .mono{font-family:var(--mono);}
+  .lbl{font-size:6px;color:#a5a199;font-family:var(--mono);letter-spacing:.1em;}
+  .hd{font-weight:700;color:#2a2a2e;}
+
+  .m-deck{width:230px;height:130px;padding:12px;display:flex;flex-direction:column;gap:6px;}
+  .m-land{width:126px;height:158px;padding:9px;display:flex;flex-direction:column;gap:5px;}
+  .m-doc{width:112px;height:150px;padding:11px;display:flex;flex-direction:column;gap:4px;}
+  .m-proto{width:82px;height:158px;padding:8px;display:flex;flex-direction:column;gap:5px;border-radius:12px;}
+  .m-info{width:112px;height:158px;padding:11px;display:flex;flex-direction:column;gap:5px;}
+  .m-ad{width:126px;height:150px;padding:11px;display:flex;flex-direction:column;}
+  .m-video{width:216px;height:122px;display:flex;align-items:center;justify-content:center;}
+  .m-dash{width:230px;height:140px;padding:11px;display:flex;flex-direction:column;gap:7px;}
+  .m-ds{width:210px;height:130px;padding:12px;display:flex;flex-direction:column;gap:8px;justify-content:center;}
+  .m-wire{width:126px;height:150px;padding:10px;display:flex;flex-direction:column;gap:6px;background:#f7f6f2;}
+  .m-wire .l{background:#cfccc3;}
+  .play{width:34px;height:34px;border-radius:50%;background:var(--accent);display:grid;place-items:center;}
+  .play::after{content:"";border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px;}
+  .tl{position:absolute;left:8px;right:8px;bottom:8px;height:3px;background:#d9d6cd;border-radius:2px;}
+  .tl::before{content:"";position:absolute;left:0;top:0;height:3px;width:38%;background:var(--accent);border-radius:2px;}
+  .sw{display:flex;height:26px;border-radius:5px;overflow:hidden;border:1px solid #e3e0d8;}
+  .sw i{flex:1;display:block;}
+  .pill{background:var(--accent);color:#fff;font-size:8px;font-weight:700;border-radius:999px;padding:4px 10px;align-self:flex-start;}
+  .tiles{display:flex;gap:5px;}
+  .tiles .t{flex:1;height:24px;border-radius:4px;background:#eceae3;border:1px solid #e0ddd5;}
+  .bars{display:flex;align-items:flex-end;gap:4px;height:44px;margin-top:auto;}
+  .bars i{flex:1;border-radius:2px 2px 0 0;display:block;background:#d9d6cd;}
+
+  footer{margin-top:56px;color:#a5a199;font-size:12px;text-align:center;font-family:var(--mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">Design Lab · Menu de formatos</div>
+    <h1>O que dá pra criar</h1>
+    <p>Este é o menu de <b>formatos</b> (o <b>quê</b>) — marca e cores aqui são <b>placeholder neutro</b>. A <b>cara</b> (o estilo) vem do <b>catálogo de estilos</b>. Escolha um formato + um estilo e a peça é construída no capricho.</p>
+    <div class="rule"></div>
+  </header>
+
+  <div class="grid">
+    <div class="fmt">
+      <div class="prev"><div class="m m-deck"><span class="lbl">EYEBROW</span><span class="hd" style="font-size:15px">Título do slide</span><div class="l" style="width:70%;height:5px"></div><div class="l acc" style="width:24px;height:8px;margin-top:auto;border-radius:999px"></div></div></div>
+      <div class="meta"><span class="n">01</span><h3>Deck / Apresentação</h3><p>Slides pra apresentar — aula, pitch, workshop, all-hands.</p><div class="dim">16:9 · 1920×1080</div></div>
+    </div>
+
+    <div class="fmt">
+      <div class="prev"><div class="m m-land"><div style="display:flex;justify-content:space-between"><span class="lbl">LOGO</span><span class="lbl">MENU</span></div><span class="hd" style="font-size:13px;margin-top:14px">Headline</span><div class="l" style="width:80%;height:4px"></div><div class="l acc" style="width:44px;height:11px;border-radius:999px;margin-top:6px"></div><div class="l" style="width:100%;height:26px;margin-top:8px"></div></div></div>
+      <div class="meta"><span class="n">02</span><h3>Landing / Site</h3><p>Página de captura, vendas, home institucional.</p><div class="dim">responsivo · web</div></div>
+    </div>
+
+    <div class="fmt">
+      <div class="prev"><div class="m m-doc"><span class="hd" style="font-size:11px">Documento</span><div class="l" style="width:40%;height:3px;background:var(--accent)"></div><div class="l" style="width:100%;height:3px;margin-top:5px"></div><div class="l" style="width:92%;height:3px"></div><div class="l" style="width:96%;height:3px"></div><div class="l" style="width:70%;height:3px"></div><div class="l" style="width:88%;height:3px;margin-top:5px"></div><div class="l" style="width:60%;height:3px"></div></div></div>
+      <div class="meta"><span class="n">03</span><h3>Documento</h3><p>Proposta, one-pager, relatório, ebook, currículo — imprimível em PDF.</p><div class="dim">A4 / carta</div></div>
+    </div>
+
+    <div class="fmt">
+      <div class="prev"><div class="m m-proto"><div style="display:flex;justify-content:space-between"><span class="lbl">9:41</span><span class="lbl">▲●</span></div><span class="hd" style="font-size:10px;margin-top:8px">Tela</span><div class="l" style="width:100%;height:16px;margin-top:2px"></div><div class="l" style="width:100%;height:16px"></div><div class="l acc" style="width:100%;height:12px;border-radius:999px;margin-top:auto"></div></div></div>
+      <div class="meta"><span class="n">04</span><h3>Protótipo de app</h3><p>Mockup interativo clicável — iPhone, Android, desktop.</p><div class="dim">moldura de device</div></div>
+    </div>
+
+    <div class="fmt">
+      <div class="prev"><div class="m m-info"><span class="lbl">DADO</span><span class="hd acc" style="font-size:30px;color:var(--accent);line-height:1">72%</span><div class="l" style="width:80%;height:3px"></div><div class="bars"><i style="height:35%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:80%;background:var(--accent)"></i><i style="height:95%;background:var(--accent)"></i></div></div></div>
+      <div class="meta"><span class="n">05</span><h3>Infográfico</h3><p>Dado, processo ou comparativo visual — bom pra carrossel.</p><div class="dim">px fixos</div></div>
+    </div>
+
+    <div class="fmt">
+      <div class="prev"><div class="m m-ad"><span class="lbl">HOOK</span><span class="hd" style="font-size:15px;margin:6px 0 auto">Chamada forte</span><div class="l acc" style="width:52px;height:12px;border-radius:999px"></div></div></div>
+      <div class="meta"><span class="n">06</span><h3>Anúncio / Social</h3><p>Feed, story, carrossel, banner — tráfego pago e orgânico.</p><div class="dim">1:1 · 4:5 · 9:16</div></div>
+    </div>
+
+    <div class="fmt">
+      <div class="prev"><div class="m m-video"><div class="play"></div><div class="tl"></div></div></div>
+      <div class="meta"><span class="n">07</span><h3>Animação / Vídeo</h3><p>Reel, story animado, abertura — exporta MP4 pra ads.</p><div class="dim">9:16 · 16:9 · MP4</div></div>
+    </div>
+
+    <div class="fmt">
+      <div class="prev"><div class="m m-dash"><div style="display:flex;justify-content:space-between"><span class="lbl">PAINEL</span><span class="lbl">USER</span></div><div class="tiles"><div class="t"></div><div class="t" style="border-color:var(--accent)"></div><div class="t"></div></div><div class="bars" style="height:30px"><i style="height:40%;background:var(--accent)"></i><i style="height:65%;background:var(--accent)"></i><i style="height:50%;background:var(--accent)"></i><i style="height:90%;background:var(--accent)"></i><i style="height:72%;background:var(--accent)"></i></div></div></div>
+      <div class="meta"><span class="n">08</span><h3>Dashboard</h3><p>Painel de controle com métricas, cards e gráficos.</p><div class="dim">app / web</div></div>
+    </div>
+
+    <div class="fmt">
+      <div class="prev"><div class="m m-ds"><span class="lbl">TOKENS</span><div class="sw"><i style="background:#d9d6cd"></i><i style="background:#8f8c84"></i><i style="background:#2a2a2e"></i><i style="background:var(--accent)"></i></div><div style="display:flex;align-items:center;gap:10px"><span style="font-weight:700;font-size:22px;color:#2a2a2e">Aa</span><span class="pill">Botão</span></div></div></div>
+      <div class="meta"><span class="n">09</span><h3>Design System</h3><p>Tokens, cores, tipografia e componentes da marca — a base das outras peças.</p><div class="dim">pasta + styles.css</div></div>
+    </div>
+
+    <div class="fmt">
+      <div class="prev"><div class="m m-wire"><div class="l" style="width:100%;height:12px"></div><div style="display:flex;gap:5px"><div class="l" style="width:40%;height:34px"></div><div class="l" style="flex:1;height:34px"></div></div><div class="l" style="width:70%;height:4px"></div><div class="l" style="width:90%;height:4px"></div><div class="l" style="width:50px;height:10px;border:1px dashed #b8b4aa;background:transparent;border-radius:3px;margin-top:auto"></div></div></div>
+      <div class="meta"><span class="n">10</span><h3>Wireframe</h3><p>Esqueleto rústico low-fi pra explorar estrutura e fluxo antes de refinar.</p><div class="dim">sketchy · P&B</div></div>
+    </div>
+  </div>
+
+  <footer>Menu de formatos · a cara vem do catálogo de estilos · marca aqui é placeholder</footer>
+</div>
+</body>
+</html>

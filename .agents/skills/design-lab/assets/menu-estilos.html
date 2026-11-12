@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Catálogo de estilos — Design Lab</title>
+<link rel="icon" href="assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Chakra+Petch:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Serif+Display:ital@0;1&family=Fredoka:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&family=VT323&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{background:#0e0e11;}
+  body{font-family:'Space Grotesk',system-ui,sans-serif;color:#ecebe7;-webkit-font-smoothing:antialiased;min-height:100vh;
+    background:radial-gradient(1000px 560px at 12% -10%,rgba(120,90,255,.1),transparent 60%),radial-gradient(900px 520px at 92% 0%,rgba(201,255,61,.06),transparent 60%),#0e0e11;padding-bottom:80px;}
+  a{color:inherit;text-decoration:none;}
+
+  .head{padding:38px clamp(22px,5vw,56px) 4px;}
+  .kick{font-family:'Space Mono';letter-spacing:.32em;font-size:11px;text-transform:uppercase;color:#8f8c85;}
+  .head h1{font-family:'Space Grotesk';font-weight:700;font-size:clamp(26px,4vw,44px);letter-spacing:-.02em;margin-top:12px;}
+  .head p{margin-top:12px;max-width:72ch;color:#a3a099;font-size:15px;line-height:1.6;}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;font-family:'Space Mono';font-size:11px;letter-spacing:.04em;color:#a3a099;}
+  .legend span{display:inline-flex;align-items:center;gap:7px;}
+  .legend .b{padding:2px 8px;border-radius:3px;font-size:10px;text-transform:uppercase;letter-spacing:.08em;}
+  .b.novo{background:#c9ff3d;color:#0e0e11;}
+  .b.feito{background:rgba(255,255,255,.14);color:#dcdad4;}
+  .b.brand{background:#f94e03;color:#180a02;}
+
+  .sech{padding:30px clamp(22px,5vw,56px) 2px;font-family:'Space Mono';font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#c9c6be;}
+  .sech b{color:#6f6c65;font-weight:400;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:16px;padding:14px clamp(22px,5vw,56px) 0;}
+
+  .tile{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08);min-height:186px;display:flex;flex-direction:column;
+    padding:16px 16px 14px;position:relative;transition:transform .15s,box-shadow .15s;}
+  a.tile:hover{transform:translateY(-3px);box-shadow:0 24px 50px rgba(0,0,0,.5);}
+  .tile .th{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+  .tile .nm{font-family:'Space Grotesk';font-weight:700;font-size:14px;letter-spacing:.01em;}
+  .tile .bd{font-family:'Space Mono';font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:3px 7px;border-radius:3px;white-space:nowrap;}
+  .tile .samp{margin:auto 0;font-size:38px;line-height:1;padding:10px 0;}
+  .tile .vibe{font-family:'Space Mono';font-size:10.5px;line-height:1.5;letter-spacing:.01em;opacity:.9;}
+  .tile .sw{display:flex;gap:5px;margin-top:11px;}
+  .tile .sw i{width:16px;height:16px;border-radius:4px;display:block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);}
+</style>
+</head>
+<body>
+
+<div class="head">
+  <div class="kick">Design Lab · repertório de direções</div>
+  <h1>Catálogo de estilos</h1>
+  <p>Não é menu fechado — comprometo com um extremo e, quando faz sentido, combino/invento. Estes são os pontos de partida. Aponta o(s) que quer ver aplicado ao teu formato e eu construo no capricho.</p>
+  <div class="legend">
+    <span><span class="b novo">novo</span> ainda não construído</span>
+    <span><span class="b feito">já feito ↗</span> tem peça pronta</span>
+    <span><span class="b brand">brand</span> usa a marca atual</span>
+  </div>
+</div>
+
+<!-- ============ DARK / TECH ============ -->
+<div class="sech">Dark <b>·</b> Tech <b>·</b> Futurista</div>
+<div class="grid">
+
+  <a class="tile" href="direcoes-novas-almas.html" style="background:#0a0c08;color:#eef6e6;">
+    <div class="th"><span class="nm">Acid Techno</span><span class="bd" style="background:#c9ff3d;color:#0a0c08">novo</span></div>
+    <div class="samp" style="font-family:'Chakra Petch';font-weight:700;text-transform:uppercase;color:#c9ff3d;text-shadow:0 0 22px rgba(201,255,61,.5)">Sistema</div>
+    <div class="vibe" style="color:#9fac90">preto + limão ácido + violeta · glow, scanline · rave, alta voltagem</div>
+    <div class="sw"><i style="background:#0a0c08"></i><i style="background:#c9ff3d"></i><i style="background:#8b6bff"></i><i style="background:#eef6e6"></i></div>
+  </a>
+
+  <a class="tile" href="landing-cyberpunk.html" style="background:#0a0a14;color:#e6e6ff;">
+    <div class="th"><span class="nm">Cyber Neon</span><span class="bd feito" style="background:rgba(255,255,255,.14);color:#dcdad4">já feito ↗</span></div>
+    <div class="samp" style="font-family:'Chakra Petch';font-weight:700;text-transform:uppercase;color:#ff2fd0;text-shadow:0 0 20px rgba(255,47,208,.6)">Fluxo</div>
+    <div class="vibe" style="color:#9a9ac2">magenta + ciano · neon, glitch · noturno, high-tech</div>
+    <div class="sw"><i style="background:#0a0a14"></i><i style="background:#ff2fd0"></i><i style="background:#29f0ff"></i></div>
+  </a>
+
+  <div class="tile" style="background:#041006;color:#46f28a;">
+    <div class="th"><span class="nm">Terminal / CRT</span><span class="bd feito" style="background:rgba(255,255,255,.14);color:#cfe">já feito ↗</span></div>
+    <div class="samp" style="font-family:'VT323';color:#46f28a;font-size:46px">&gt; build_</div>
+    <div class="vibe" style="color:#5fae7a">verde fósforo + âmbar · monospace cru · "quem constrói de verdade"</div>
+    <div class="sw"><i style="background:#041006"></i><i style="background:#39ff88"></i><i style="background:#ffb000"></i></div>
+  </div>
+
+  <a class="tile" href="direcoes-redesign-2026.html" style="background:#0b0a0f;color:#f4f2f7;">
+    <div class="th"><span class="nm">Solar Flux</span><span class="bd" style="background:#c9ff3d;color:#0a0c08">novo</span></div>
+    <div class="samp" style="font-family:'Space Grotesk';font-weight:700;background:linear-gradient(100deg,#ffb347,#f94e03);-webkit-background-clip:text;background-clip:text;color:transparent">Automação</div>
+    <div class="vibe" style="color:#b6b1c2">dark luminoso · glow âmbar→laranja · vidro fosco, produto de IA</div>
+    <div class="sw"><i style="background:#0b0a0f"></i><i style="background:#ffb347"></i><i style="background:#f94e03"></i><i style="background:#f4f2f7"></i></div>
+  </a>
+
+  <div class="tile" style="background:#071019;color:#cfe3f0;">
+    <div class="th"><span class="nm">Data / Terminal Pro</span><span class="bd" style="background:#c9ff3d;color:#0a0c08">novo</span></div>
+    <div class="samp" style="font-family:'IBM Plex Mono';font-weight:600;color:#ffb000;font-size:32px">R$10k–60k</div>
+    <div class="vibe" style="color:#79a0ba">navy + âmbar de dado · denso, painel Bloomberg · sério, analítico</div>
+    <div class="sw"><i style="background:#071019"></i><i style="background:#ffb000"></i><i style="background:#59d4ff"></i></div>
+  </div>
+
+  <a class="tile" href="redesign-synthwave.html" style="background:#1a0b2e;color:#ffe6f6;">
+    <div class="th"><span class="nm">Synthwave</span><span class="bd feito" style="background:rgba(255,255,255,.14);color:#dcdad4">já feito ↗</span></div>
+    <div class="samp" style="font-family:'Chakra Petch';font-weight:700;text-transform:uppercase;color:#ff4d9d;text-shadow:0 0 20px rgba(255,77,157,.6)">Retrô</div>
+    <div class="vibe" style="color:#b79ad6">roxo + rosa + sol · grid infinito, anos 80 · nostálgico</div>
+    <div class="sw"><i style="background:#1a0b2e"></i><i style="background:#ff4d9d"></i><i style="background:#29f0ff"></i><i style="background:#ffb347"></i></div>
+  </a>
+
+</div>
+
+<!-- ============ EDITORIAL / LUXO ============ -->
+<div class="sech">Editorial <b>·</b> Luxo <b>·</b> Sério</div>
+<div class="grid">
+
+  <a class="tile" href="direcoes-novas-almas.html" style="background:#e7e3da;color:#23271f;">
+    <div class="th"><span class="nm">Silêncio (Scandi)</span><span class="bd" style="background:#c9ff3d;color:#0a0c08">novo</span></div>
+    <div class="samp" style="font-family:'Newsreader';font-weight:400;font-style:italic;color:#5c7360">Método</div>
+    <div class="vibe" style="color:#5a5c50">pedra + sálvia · serifada, muito respiro · o "sem hype" literal</div>
+    <div class="sw"><i style="background:#e7e3da"></i><i style="background:#5c7360"></i><i style="background:#23271f"></i></div>
+  </a>
+
+  <div class="tile" style="background:#0e0e10;color:#f2ede2;">
+    <div class="th"><span class="nm">Editorial Premium</span><span class="bd feito" style="background:rgba(255,255,255,.14);color:#dcdad4">já feito ↗</span></div>
+    <div class="samp" style="font-family:'Instrument Serif';color:#e6a866">Superpoder</div>
+    <div class="vibe" style="color:#b3ac9d">preto + marfim + cobre · serifada de alto contraste · consultoria de elite</div>
+    <div class="sw"><i style="background:#0e0e10"></i><i style="background:#f2ede2"></i><i style="background:#c98a4b"></i></div>
+  </div>
+
+  <div class="tile" style="background:#0c1f1a;color:#eee4cf;">
+    <div class="th"><span class="nm">Art Déco Luxe</span><span class="bd" style="background:#c9ff3d;color:#0a0c08">novo</span></div>
+    <div class="samp" style="font-family:'Cormorant Garamond';font-weight:600;color:#d9b872">Domínio</div>
+    <div class="vibe" style="color:#9db3a3">esmeralda + ouro · geometria simétrica · atemporal, mestria</div>
+    <div class="sw"><i style="background:#0c1f1a"></i><i style="background:#d9b872"></i><i style="background:#1c4d3f"></i></div>
+  </div>
+
+  <div class="tile" style="background:#f5f2ee;color:#111;">
+    <div class="th"><span class="nm">Fashion Didone</span><span class="bd" style="background:#c9ff3d;color:#0a0c08">novo</span></div>
+    <div class="samp" style="font-family:'Bodoni Moda';font-weight:700;color:#111">Sistema</div>
+    <div class="vibe" style="color:#555">branco + preto + 1 vermelho · Bodoni alto contraste · revista, chique</div>
+    <div class="sw"><i style="background:#f5f2ee"></i><i style="background:#111"></i><i style="background:#d62828"></i></div>
+  </div>
+
+  <div class="tile" style="background:#f7f6f3;color:#111;">
+    <div class="th"><span class="nm">Brutalist Mono</span><span class="bd" style="background:#c9ff3d;color:#0a0c08">novo</span></div>
+    <div class="samp" style="font-family:'Archivo';font-weight:900;text-transform:uppercase;color:#111;letter-spacing:-.03em">Cru.</div>
+    <div class="vibe" style="color:#555">só preto & branco · grotesca pesada · sem cor, sem pedir licença</div>
+    <div class="sw"><i style="background:#f7f6f3"></i><i style="background:#111"></i></div>
+  </div>
+
+  <a class="tile" href="landing-jornal.html" style="background:#f4f0e6;color:#1a1712;">
+    <div class="th"><span class="nm">Jornal / Print</span><span class="bd feito" style="background:rgba(0,0,0,.1);color:#4a453c">já feito ↗</span></div>
+    <div class="samp" style="font-family:'DM Serif Display';color:#1a1712">Manchete</div>
+    <div class="vibe" style="color:#6a6355">papel jornal · colunas, serifada · autoridade, notícia</div>
+    <div class="sw"><i style="background:#f4f0e6"></i><i style="background:#1a1712"></i><i style="background:#a33"></i></div>
+  </a>
+
+</div>
+
+<!-- ============ RETRÔ / EXPRESSIVO ============ -->
+<div class="sech">Retrô <b>·</b> Expressivo <b>·</b> Duotone</div>
+<div class="grid">
+
+  <a class="tile" href="direcoes-novas-almas.html" style="background:#f2ecdd;color:#181712;">
+    <div class="th"><span class="nm">Risograph</span><span class="bd" style="background:#c9ff3d;color:#0a0c08">novo</span></div>
+    <div class="samp" style="font-family:'Space Grotesk';font-weight:700;text-transform:uppercase;color:#181712;text-shadow:3px 3px 0 #ff5b64">Cola</div>
+    <div class="vibe" style="color:#3a382f">papel + azul/coral fora de registro · grão · humano, indie</div>
+    <div class="sw"><i style="background:#f2ecdd"></i><i style="background:#2f39ff"></i><i style="background:#ff5b64"></i><i style="background:#ffe36e"></i></div>
+  </a>
+
+  <a class="tile" href="landing-vaporwave.html" style="background:#ffd9ec;color:#3a2a4a;">
+    <div class="th"><span class="nm">Vaporwave</span><span class="bd feito" style="background:rgba(0,0,0,.1);color:#5a4a6a">já feito ↗</span></div>
+    <div class="samp" style="font-family:'Chakra Petch';font-weight:700;color:#8a4fff">ｖａｐｏｒ</div>
+    <div class="vibe" style="color:#7a6a8a">pastel teal + rosa · estética 90s mall · sonhador, irônico</div>
+    <div class="sw"><i style="background:#ffd9ec"></i><i style="background:#55e6c9"></i><i style="background:#8a4fff"></i></div>
+  </a>
+
+  <div class="tile" style="background:#f0e2c8;color:#3a2418;">
+    <div class="th"><span class="nm">70s Warm</span><span class="bd" style="background:#c9ff3d;color:#0a0c08">novo</span></div>
+    <div class="samp" style="font-family:'Fredoka';font-weight:700;color:#c56a1e">Retrô 70</div>
+    <div class="vibe" style="color:#6b5136">mostarda + terracota + abacate · arredondado · quente, nostálgico</div>
+    <div class="sw"><i style="background:#f0e2c8"></i><i style="background:#d98a2b"></i><i style="background:#7a8b3c"></i><i style="background:#6b3f2a"></i></div>
+  </div>
+
+  <div class="tile" style="background:linear-gradient(135deg,#dfe6ee,#b9c4d4);color:#1a2436;">
+    <div class="th"><span class="nm">Y2K Chrome</span><span class="bd" style="background:#c9ff3d;color:#0a0c08">novo</span></div>
+    <div class="samp" style="font-family:'Chakra Petch';font-weight:700;background:linear-gradient(180deg,#9fb4d4,#3a5a8c,#c9d6ea);-webkit-background-clip:text;background-clip:text;color:transparent">Y2K</div>
+    <div class="vibe" style="color:#44506a">cromado + azul metálico · bevel, bolha · início dos anos 2000</div>
+    <div class="sw"><i style="background:#c9d6ea"></i><i style="background:#3a5a8c"></i><i style="background:#8fa8cf"></i></div>
+  </div>
+
+  <a class="tile" href="landing-aurora.html" style="background:#070b16;color:#e6f0ff;">
+    <div class="th"><span class="nm">Aurora Gradient</span><span class="bd feito" style="background:rgba(255,255,255,.14);color:#dcdad4">já feito ↗</span></div>
+    <div class="samp" style="font-family:'Space Grotesk';font-weight:700;background:linear-gradient(100deg,#5ee7c2,#7a8bff,#ff8ad4);-webkit-background-clip:text;background-clip:text;color:transparent">Aurora</div>
+    <div class="vibe" style="color:#9fb0cf">mesh escuro + gradiente iridescente · SaaS moderno, sonho</div>
+    <div class="sw"><i style="background:#070b16"></i><i style="background:#5ee7c2"></i><i style="background:#7a8bff"></i><i style="background:#ff8ad4"></i></div>
+  </a>
+
+  <a class="tile" href="landing-glassmorphism.html" style="background:#12203a;color:#eaf1ff;">
+    <div class="th"><span class="nm">Glassmorphism</span><span class="bd feito" style="background:rgba(255,255,255,.14);color:#dcdad4">já feito ↗</span></div>
+    <div class="samp" style="font-family:'Space Grotesk';font-weight:700;color:#bcd4ff">Vidro</div>
+    <div class="vibe" style="color:#8fa6cf">vidro fosco tipo Apple · blur, camadas translúcidas · limpo, premium</div>
+    <div class="sw"><i style="background:#12203a"></i><i style="background:#5aa7ff"></i><i style="background:#eaf1ff"></i></div>
+  </a>
+
+</div>
+
+<!-- ============ PLAYFUL / ESTRUTURADO ============ -->
+<div class="sech">Playful <b>·</b> Estruturado <b>·</b> Marca atual</div>
+<div class="grid">
+
+  <div class="tile" style="background:#ffd84d;color:#111;">
+    <div class="th"><span class="nm">Neo-Brutalism</span><span class="bd feito" style="background:rgba(0,0,0,.14);color:#333">já feito ↗</span></div>
+    <div class="samp" style="font-family:'Archivo';font-weight:900;text-transform:uppercase;color:#111">Bora!</div>
+    <div class="vibe" style="color:#444">amarelo + bordas grossas + sombra dura · alto, jovem</div>
+    <div class="sw"><i style="background:#ffd84d"></i><i style="background:#111"></i><i style="background:#3b5bff"></i><i style="background:#ff5a3c"></i></div>
+  </div>
+
+  <div class="tile" style="background:#fdf6e3;color:#2a2438;">
+    <div class="th"><span class="nm">Memphis 80s</span><span class="bd" style="background:#c9ff3d;color:#0a0c08">novo</span></div>
+    <div class="samp" style="font-family:'Fredoka';font-weight:700;color:#e5326b">Pop!</div>
+    <div class="vibe" style="color:#6a6478">formas soltas + primárias · pós-moderno lúdico · divertido</div>
+    <div class="sw"><i style="background:#fdf6e3"></i><i style="background:#e5326b"></i><i style="background:#ffd23f"></i><i style="background:#2ec4b6"></i></div>
+  </div>
+
+  <a class="tile" href="landing-handdrawn.html" style="background:#fffdf5;color:#2a2a28;">
+    <div class="th"><span class="nm">Hand-drawn</span><span class="bd feito" style="background:rgba(0,0,0,.1);color:#555">já feito ↗</span></div>
+    <div class="samp" style="font-family:'Caveat';font-weight:700;color:#e0663a;font-size:44px">à mão</div>
+    <div class="vibe" style="color:#6a655e">papel + traço de caneta · rabisco, setas · próximo, artesanal</div>
+    <div class="sw"><i style="background:#fffdf5"></i><i style="background:#2a2a28"></i><i style="background:#e0663a"></i></div>
+  </a>
+
+  <div class="tile" style="background:#071627;color:#cfe8ff;background-image:linear-gradient(rgba(89,212,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(89,212,255,.12) 1px,transparent 1px);background-size:20px 20px;">
+    <div class="th"><span class="nm">Blueprint Técnico</span><span class="bd feito" style="background:rgba(255,255,255,.14);color:#dcdad4">já feito ↗</span></div>
+    <div class="samp" style="font-family:'IBM Plex Mono';font-weight:600;color:#59d4ff">1:1</div>
+    <div class="vibe" style="color:#8fbdd6">planta de engenharia · ciano/navy · "você é o arquiteto"</div>
+    <div class="sw"><i style="background:#071627"></i><i style="background:#59d4ff"></i><i style="background:#eaf7ff"></i></div>
+  </div>
+
+  <div class="tile" style="background:#f4f1ea;color:#111;">
+    <div class="th"><span class="nm">Swiss / Bauhaus</span><span class="bd feito" style="background:rgba(0,0,0,.1);color:#555">já feito ↗</span></div>
+    <div class="samp" style="font-family:'Archivo';font-weight:900;letter-spacing:-.03em;color:#111">Grid.</div>
+    <div class="vibe" style="color:#555">vermelho + preto · grid rígido · disciplinado, atemporal</div>
+    <div class="sw"><i style="background:#f4f1ea"></i><i style="background:#e3242b"></i><i style="background:#1a52d6"></i><i style="background:#111"></i></div>
+  </div>
+
+  <a class="tile" href="landing-engenharia-editorial.html" style="background:#0d0806;color:#f7f2ea;background-image:linear-gradient(rgba(247,242,234,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(247,242,234,.06) 1px,transparent 1px);background-size:24px 24px;">
+    <div class="th"><span class="nm">Engenharia-Editorial</span><span class="bd brand" style="background:#f94e03;color:#180a02">brand ↗</span></div>
+    <div class="samp" style="font-family:'Archivo';font-weight:900;letter-spacing:-.03em;color:#f94e03">Sistema</div>
+    <div class="vibe" style="color:#a99b8e">preto quente + laranja + mono blueprint · técnico, "sem hype" (v1)</div>
+    <div class="sw"><i style="background:#0d0806"></i><i style="background:#f94e03"></i><i style="background:#f7f2ea"></i></div>
+  </a>
+
+  <a class="tile" href="direcoes-redesign-2026.html" style="background:#f4efe6;color:#141210;">
+    <div class="th"><span class="nm">Máquina (Swiss quente)</span><span class="bd brand" style="background:#f94e03;color:#180a02">brand ↗</span></div>
+    <div class="samp" style="font-family:'Archivo';font-weight:900;text-transform:uppercase;letter-spacing:-.03em;color:#141210">Constrói</div>
+    <div class="vibe" style="color:#5a4f45">papel quente + laranja + Archivo gigante · industrial, imponente</div>
+    <div class="sw"><i style="background:#f4efe6"></i><i style="background:#f94e03"></i><i style="background:#141210"></i></div>
+  </a>
+
+  <div class="tile" style="background:#eef1ec;color:#2b332c;">
+    <div class="th"><span class="nm">Botanical / Orgânico</span><span class="bd" style="background:#c9ff3d;color:#0a0c08">novo</span></div>
+    <div class="samp" style="font-family:'Cormorant Garamond';font-weight:600;font-style:italic;color:#4a6b46">Crescer</div>
+    <div class="vibe" style="color:#5a6a58">verdes terrosos + creme · humanista, natural · calmo, vivo</div>
+    <div class="sw"><i style="background:#eef1ec"></i><i style="background:#4a6b46"></i><i style="background:#c98f5a"></i></div>
+  </div>
+
+</div>
+
+</body>
+</html>

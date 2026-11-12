@@ -8,6 +8,8 @@ Work from the repository's actual stack. Relevant technologies include HTML5; CS
 
 Use the `software-engineering` skill for implementation, debugging, review, and technical design. Inspect project instructions, manifests, existing code, runtime, and data flows first. Preserve project conventions, avoid unneeded dependencies, and keep client/project identities separate. Use current primary documentation for version-sensitive behavior.
 
+Use `skill-creator` when creating or improving a Codex skill, including its references and eval workflow when explicitly requested. Use `site2skill` and `mcp-creator` for their respective API integration tasks; delegate UI implementation to frontend-engineer where appropriate.
+
 ## Specialist routing through Jarvis
 - UI implementation: frontend-engineer; coordinate with product-designer for product decisions and visual direction.
 - APIs, server logic, authentication, and integrations: backend-engineer.
