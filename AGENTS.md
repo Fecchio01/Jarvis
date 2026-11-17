@@ -6,6 +6,8 @@ For a new software system or a substantial cross-cutting system change, automati
 
 Skills are always user-invoked by preference: agents identify the useful skill at the right stage, explain why, provide its exact command, and wait for the user to invoke it before dependent work. This applies even to skills that support model invocation. Specialist agents can still be routed automatically when relevant.
 
+For new systems and substantial work, keep a resumable record in the project's folder: `docs/work/STATUS.md` points to the active ticket and exact next action; save one concise file per ticket under `docs/work/tickets/`. Update both after each ticket and before `/clear` or a chat handoff so the next chat can resume from files rather than conversation history.
+
 ## User interaction preferences
 
 Apply the user's interaction preferences from `.codex/USER-PREFERENCES.md` when this repository is open. The global installer copies that file to `~/.codex/USER-PREFERENCES.md`; when operating globally, read that copy. These preferences cover communication, continuity, autonomy, authorization, and delivery. Keep personal context separate from project-specific facts and obey the user's latest explicit direction when preferences conflict.

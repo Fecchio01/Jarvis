@@ -4,7 +4,7 @@ Jarvis and the engineering team follow this sequence for a new software system o
 
 ## Stages
 
-1. **Identify and inspect.** Find the matching Codex project, repository, and existing materials. Read project instructions and relevant docs. Record remotes, branch, commit, worktrees, and local changes. Preserve existing work.
+1. **Identify and inspect.** Find the matching Codex project, repository, and existing materials. Read project instructions and relevant docs. If `docs/work/STATUS.md` exists, read it first, then open only the active ticket and the docs it points to. Record remotes, branch, commit, worktrees, and local changes. Preserve existing work.
 
 2. **Organize the workspace.** Reuse the project's folder and Codex project when they exist. For a new system, prepare one canonical folder, separate source code from brand/reference material, and add only useful README/instructions/docs. Create or connect the repository as authorized. If Codex has no project-creation action, prepare the folder and tell the user the one UI action still needed.
 
@@ -12,15 +12,15 @@ Jarvis and the engineering team follow this sequence for a new software system o
 
 4. **Recommend the skill for this stage.** Do not invoke any skill. Name one relevant skill, give its exact command and a one-sentence reason, then wait for the user to invoke it before dependent work. Continue independent inspection or setup. Do not present a long skill menu or ask the user to choose among commands.
 
-5. **Specify and create tickets.** For a new system or substantial change, make a concise spec and split implementation into small tickets with acceptance criteria and dependencies. Prefer vertical slices that deliver useful behavior. Use the configured tracker when authorized; otherwise keep the spec/tickets in the project's docs. Recommend `to-spec` or `to-tickets` at this stage and wait for the user's invocation before work that depends on that skill.
+5. **Specify and create tickets.** For a new system or substantial change, make a concise spec and split implementation into small tickets with acceptance criteria and dependencies. Prefer vertical slices that deliver useful behavior. Use the configured tracker when authorized; also save a concise local record under `docs/work/tickets/` so a new chat can resume from the project folder. If no tracker is configured, keep the tickets there. Keep `docs/work/STATUS.md` as the short index of current milestone, active ticket, next action, blockers, branch, and last commit. Recommend `to-spec` or `to-tickets` at this stage and wait for the user's invocation before work that depends on that skill.
 
-6. **Implement ticket by ticket.** Choose stack from the actual repository. Route only relevant specialists. Finish one coherent ticket at a time; parallelize only independent work. Preserve unrelated changes. Recommend implementation or design skills when they materially help. Testing remains governed by the user's current instruction; do not add or run tests unless requested.
+6. **Implement ticket by ticket.** Choose stack from the actual repository. Route only relevant specialists. Finish one coherent ticket at a time; parallelize only independent work. Preserve unrelated changes. After each ticket, update its file with status, changed files, commit, verification actually performed, and the next dependency; update `docs/work/STATUS.md`. Recommend implementation or design skills when they materially help. Testing remains governed by the user's current instruction; do not add or run tests unless requested.
 
 7. **Review each meaningful milestone.** Compare the diff with acceptance criteria and project standards. Recommend a review skill when useful and let the user invoke it. Use specialist review for substantial work when relevant. Report only checks actually performed.
 
 8. **Commit and deliver.** Stage only this change, create one meaningful commit per coherent change, push when the user's standing instructions authorize it, and confirm the remote update. Deploy only under the project's existing authorization. The Atelier Approach instructions authorize production deployment after a code push; other systems need their own applicable authorization.
 
-9. **Close concisely.** Report outcome, key files, ticket status, branch/commit/push/deploy status, and unresolved action. Keep the final update short; link to project docs instead of repeating them.
+9. **Checkpoint and close concisely.** Before `/clear`, ending a session, or moving to a new chat, save the current state in `docs/work/STATUS.md` and update the active ticket. Include what is done, what is in progress, exact next action, blockers/decisions, branch and latest commit. Do not make chat history the only record of work. A new chat in the same Codex project resumes by reading the status index and active ticket, not by reconstructing the whole conversation. Report outcome, key files, ticket status, branch/commit/push/deploy status, and unresolved action briefly.
 
 ## Skill recommendations by stage
 
@@ -43,3 +43,4 @@ Use the exact invocation syntax surfaced by the current Codex plugin. If a skill
 - Send progress updates only for a decision, milestone, blocker, or material finding.
 - Keep specs and tickets in project files; refer to them instead of repeating them in chat.
 - Do not run every specialist, skill, or check on every project.
+- Before the user clears context, confirm that the project checkpoint and active ticket are saved. Clearing/restarting the chat does not save files; it only helps focus the next conversation on the persisted project state.
