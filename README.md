@@ -59,7 +59,7 @@ A skill local `.agents/skills/customer-success/SKILL.md` adapta princípios da s
 
 O software-engineer é o generalista para tarefas pequenas e mudanças que cruzam camadas. Jarvis aciona especialistas conforme a tarefa: frontend, backend, banco de dados, QA, plataforma ou segurança.
 
-Para iniciar um sistema ou fazer uma mudança estrutural, Jarvis usa automaticamente a skill `system-builder`, que organiza a sequência de descoberta do projeto, setup, seleção de especialistas, especificação, implementação, revisão e entrega Git autorizada. Ela preserva o fluxo direto para correções pequenas e não presume permissão para ações externas.
+Para iniciar um sistema ou fazer uma mudança estrutural, Jarvis segue `.agents/skills/system-builder/WORKFLOW.md`, que organiza descoberta, preparação, especificação, tickets, implementação, revisão e entrega Git. As skills são recomendadas ao usuário uma por vez, com o comando exato; o agente aguarda a invocação manual antes do trabalho dependente. O fluxo permanece direto para correções pequenas e não presume permissão para ações externas.
 
 A cobertura inclui HTML5, CSS3, JavaScript, TypeScript, Node.js, Python, SQL (conforme o banco do projeto), JSON/YAML, shell, GLSL e Three.js quando houver necessidade real de 3D. Three.js é uma biblioteca. Essa lista não obriga um projeto a usar todas as tecnologias: o agente inspeciona o repositório e segue a stack já adotada. Consulte as skills especializadas em `.agents/skills/`.
 
