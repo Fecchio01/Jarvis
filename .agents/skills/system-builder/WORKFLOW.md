@@ -8,9 +8,9 @@ Jarvis and the engineering team follow this sequence for a new software system o
 
 2. **Organize the workspace.** Reuse the project's folder and Codex project when they exist. For a new system, prepare one canonical folder, separate source code from brand/reference material, and add only useful README/instructions/docs. Create or connect the repository as authorized. If Codex has no project-creation action, prepare the folder and tell the user the one UI action still needed.
 
-3. **Clarify the outcome.** Inspect the request and project context first. Ask only questions whose answers change product behavior, scope, data handling, architecture, cost, or an external action. Record the expected outcome and acceptance criteria concisely.
+3. **Discover before designing or coding.** For new behavior, product/design work, or a nontrivial change, first summarize the understood outcome and ask the smallest set of unanswered questions that could materially change behavior, scope, acceptance, data handling, cost, or external effects (bundle up to three). Wait for the user's answers before settling those decisions. Reuse prior decisions only when the user clearly approved them for this same project and change. If nothing material is unresolved, state the assumptions and acceptance criteria briefly. Completion: the user has answered the material questions, or the remaining assumptions are explicit and low-impact.
 
-4. **Recommend the skill for this stage.** Do not invoke any skill. Name one relevant skill, give its exact command and a one-sentence reason, then wait for the user to invoke it before dependent work. Continue independent inspection or setup. Do not present a long skill menu or ask the user to choose among commands.
+4. **Hold the skill gate.** Skills are user-invoked. At the relevant stage, recommend exactly one skill with its exact command and a brief reason; wait for the user to invoke it before work that depends on it. Do not design, draft implementation, edit files, or delegate implementation while this gate is pending. Read-only inspection and research may continue. If the user has already invoked the relevant skill in the current task, proceed. Completion: the skill invocation is visible in the current task, or the task is a small bounded fix for which no skill materially helps.
 
 5. **Specify and create tickets.** For a new system or substantial change, make a concise spec and split implementation into small tickets with acceptance criteria and dependencies. Prefer vertical slices that deliver useful behavior. Use the configured tracker when authorized; also save a concise local record under `docs/work/tickets/` so a new chat can resume from the project folder. If no tracker is configured, keep the tickets there. Keep `docs/work/STATUS.md` as the short index of current milestone, active ticket, next action, blockers, branch, and last commit. Recommend `to-spec` or `to-tickets` at this stage and wait for the user's invocation before work that depends on that skill.
 
@@ -38,7 +38,7 @@ Use the exact invocation syntax surfaced by the current Codex plugin. If a skill
 ## Token-efficient communication
 
 - Start with a short status and the next stage, not a full process recap.
-- Ask one focused question at a time only when the answer matters.
+- Bundle up to three material discovery questions; wait for answers before design or implementation.
 - Recommend at most one skill at a time, exactly when its stage arrives.
 - Send progress updates only for a decision, milestone, blocker, or material finding.
 - Keep specs and tickets in project files; refer to them instead of repeating them in chat.

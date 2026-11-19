@@ -6,6 +6,8 @@ For a new software system or a substantial cross-cutting system change, automati
 
 Skills are always user-invoked by preference: agents identify the useful skill at the right stage, explain why, provide its exact command, and wait for the user to invoke it before dependent work. This applies even to skills that support model invocation. Specialist agents can still be routed automatically when relevant.
 
+Before implementing new behavior, changing product UX, or making a nontrivial system change, run the discovery gate in the system-builder workflow. A user request authorizes its stated outcome; it does not resolve material product decisions or invoke a skill. Pause dependent implementation until the user has answered material questions and invoked the recommended skill. Read-only inspection and research may continue.
+
 For new systems and substantial work, keep a resumable record in the project's folder: `docs/work/STATUS.md` points to the active ticket and exact next action; save one concise file per ticket under `docs/work/tickets/`. Update both after each ticket and before `/clear` or a chat handoff so the next chat can resume from files rather than conversation history.
 
 ## User interaction preferences
